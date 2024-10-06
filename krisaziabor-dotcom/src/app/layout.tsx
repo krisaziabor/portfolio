@@ -9,8 +9,9 @@ const abcdiatype = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kris Aziabor | Coming Soon",
-  description: "Full site is in development...",
+  title: "Kris Aziabor /// Coming Soon",
+  description: "Creating ",
+  icons: "icon.ico",
 };
 
 export default function RootLayout({
