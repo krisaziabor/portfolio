@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background flex items-end p-8 sm:p-20 font-[family-name:var(--font-abc-diatype)]">
+    <div className="min-h-screen bg-background flex items-end p-4 sm:p-20 font-[family-name:var(--font-abc-diatype)]">
       <main className="text-base text-left text-foreground">
         <ol>
           <li className="mb-4">
