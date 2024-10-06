@@ -10,7 +10,7 @@ const abcdiatype = localFont({
 
 export const metadata: Metadata = {
   title: "Kris Aziabor /// Coming Soon",
-  description: "Creating ",
+  description: "Creating striking, accessible designs with unconventional, yet powerful software. In development.",
   icons: "icon.ico",
 };
 
