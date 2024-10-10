@@ -13,7 +13,7 @@ export default function Home() {
 
           <li>
             <a
-              href="http://localhost:3000/Design%20at%20Yale.pdf" 
+              href="http://krisaziabor.com/Design%20at%20Yale.pdf" 
               target="_blank"
               className="hover:text-orange-400"
             >
