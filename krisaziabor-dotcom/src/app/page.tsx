@@ -13,10 +13,11 @@ export default function Home() {
 
           <li>
             <a
-              href="mailto:kris.aziabor@yale.edu?cc=kris@krisaziabor.com"
+              href="http://localhost:3000/Design%20at%20Yale.pdf" 
+              target="_blank"
               className="hover:text-orange-400"
             >
-              Request portfolio -&gt;
+              View my portfolio -&gt;
             </a>
           </li>
         </ol>

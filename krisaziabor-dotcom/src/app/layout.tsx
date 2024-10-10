@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+// import { dev } from '$app/environment';
+// import { inject } from '@vercel/analytics';
+ 
+// inject({ mode: dev ? 'development' : 'production' });
 
 const abcdiatype = localFont({
   src: "./fonts/ABCDiatypeEdu-Regular.otf",
