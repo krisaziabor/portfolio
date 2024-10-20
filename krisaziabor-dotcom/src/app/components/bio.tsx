@@ -1,6 +1,5 @@
-export default function Hero() {
+export default function Bio() {
   return (
-    <div className="min-h-screen bg-background flex items-center sm:items-end justify-center sm:justify-start p-8 sm:p-20 font-[family-name:var(--font-abc-diatype)]">
       <main className="text-base text-left text-foreground mx-auto sm:mx-0 max-w-[90%] sm:max-w-none">
         <ol>
           <li className="mb-4">
@@ -22,6 +21,5 @@ export default function Hero() {
           </li>
         </ol>
       </main>
-    </div>
   );
 }

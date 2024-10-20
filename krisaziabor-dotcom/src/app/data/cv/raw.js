@@ -1,4 +1,4 @@
-const cvData = {
+export const rawData = {
   software: [
     {
       institution: "Design at Yale",
@@ -26,30 +26,6 @@ const cvData = {
         "Worked at (now defunct) femtech health startup in Berlin, Germany. Revamped website with multi-language functionality, resolved bugs in alpha app, and create Figma prototype for improved onboarding user experience.",
       link: "https://cyclio.app",
       tags: [],
-    },
-    {
-      institution: "Yale Visual Artists",
-      position: "Project Lead & Board Member",
-      status: "current",
-      description: null,
-      link: null,
-      tags: ["extra"],
-    },
-    {
-      institution: "The New Journal",
-      position: "Web Consultant & Director",
-      status: "current",
-      description: null,
-      link: null,
-      tags: ["extra"],
-    },
-    {
-      institution: "WORD",
-      position: 'Commissioned for "WORD The Album"',
-      status: "current",
-      description: null,
-      link: null,
-      tags: ["extra"],
     },
   ],
   photo: [
@@ -80,19 +56,10 @@ const cvData = {
       link: "https://maisonatyale.com",
       tags: [],
     },
-    {
-      institution:
-        "Established freelance photography business, amassing over fifteen clients in the 23-24 school year.",
-      position: null,
-      status: "present",
-      description: null,
-      link: null,
-      tags: ["extra"],
-    },
   ],
   projects: [
     {
-      institution: "Work In Progress",
+      institution: "Linear Product Management Automation",
       position: null,
       description:
         "A full-stack web personal tool to optimize my product management across my multiple freelance, studio, and personal projects.",
@@ -100,24 +67,24 @@ const cvData = {
       link: null,
       tags: [],
     },
-    {
-      institution: "Design at Yale",
-      position: "Artist Web Book",
-      description:
-        "Leading web design and development for Design at Yale’s second-ever artist book and first-ever website.",
-      status: "present",
-      link: null,
-      tags: [],
-    },
-    {
-      institution: "Design at Yale",
-      position: "Y/CS",
-      description:
-        "Creative director for Yale Computer Society’s rebrand, producing a comprehensive brand book and set of social media post Figma templates.",
-      status: "present",
-      link: null,
-      tags: [],
-    },
+    // {
+    //   institution: "Design at Yale Artist Web Book",
+    //   position: null,
+    //   description:
+    //     "Leading web design and development for Design at Yale’s second-ever artist book and first-ever website.",
+    //   status: "present",
+    //   link: null,
+    //   tags: [],
+    // },
+    // {
+    //   institution: "Design at Yale x Y/CS Rebrand",
+    //   position: null,
+    //   description:
+    //     "Creative director for Yale Computer Society’s rebrand, producing a comprehensive brand book and set of social media post Figma templates.",
+    //   status: "present",
+    //   link: null,
+    //   tags: [],
+    // },
     {
       institution: "ADS FOR SALE",
       position: null,
@@ -136,6 +103,47 @@ const cvData = {
       link: null,
       tags: [],
     },
+  ],
+};
+
+export const rawExtra = {
+  software: [
+    {
+      institution: "Yale Visual Artists",
+      position: "Project Lead & Board Member",
+      status: "current",
+      description: null,
+      link: null,
+      tags: ["extra"],
+    },
+    {
+      institution: "The New Journal",
+      position: "Web Consultant & Director",
+      status: "current",
+      description: null,
+      link: null,
+      tags: ["extra"],
+    },
+    {
+      institution: "WORD",
+      position: 'Commissioned for "WORD The Album"',
+      status: "current",
+      description: null,
+      link: null,
+      tags: ["extra"],
+    },
+  ],
+  photo: [
+    {
+      institution: "Established freelance photography business, amassing over fifteen clients in the 23-24 school year.",
+      position: null,
+      status: "present",
+      description: null,
+      link: null,
+      tags: ["extra"],
+    },
+  ],
+  projects: [
     {
       institution: "Songs For You",
       position: null,
@@ -161,25 +169,4 @@ const cvData = {
       tags: ["extra"],
     },
   ],
-};
-
-function elements(tag) {
-  for (let index = 0; index < cvData[tag].length; index++) {
-    if (cvData[tag][index].position != null) {
-      console.log(
-        cvData[tag][index].institution + ",",
-        cvData[tag][index].position
-      );
-    } else {
-      console.log(cvData[tag][index].institution);
-    }
-
-    if (cvData[tag][index].description != null) {
-      console.log("-> " + cvData[tag][index].description + "\n");
-    }
-  }
 }
-
-elements("software");
-elements("photo");
-elements("projects");

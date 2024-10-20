@@ -12,6 +12,12 @@ const abcdiatype = localFont({
   weight: "400",
 });
 
+const boldabcdiatype = localFont({
+  src: "./fonts/ABCDiatypeEdu-Bold.otf",
+  variable: "--font-bold-abc-diatype",
+  weight: "700",
+});
+
 export const metadata: Metadata = {
   title: "Kris Aziabor /// Coming Soon",
   description: "Creating striking, accessible designs with unconventional, yet powerful software. In development.",
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${abcdiatype.variable} antialiased`}
+        className={`${abcdiatype.variable} ${boldabcdiatype.variable} antialiased`}
       >
         {children}
       </body>
