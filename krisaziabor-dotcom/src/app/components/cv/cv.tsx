@@ -4,10 +4,28 @@ import { softwareDesign, photo, projects } from "./lists";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import React from "react";
 
+interface OpenSection {
+  section: SectionType;
+  index: number;
+}
+
+type SectionType = "softwareDesign" | "photo" | "projects";
+
 export default function CV() {
-  const [openSDetail, setOpenSDetail] = React.useState(null); // Use null for no open item
-  const [openPDetail, setOpenPDetail] = React.useState(null); // Use null for no open item
-  const [openPrDetail, setOpenPrDetail] = React.useState(null); // Use null for no open item
+  const [openSection, setOpenSection] = React.useState<OpenSection | null>(
+    null
+  );
+
+  const handleOpenChange = (section: SectionType, index: number) => {
+    if (openSection?.section === section && openSection.index === index) {
+      setOpenSection(null);
+    } else {
+      setOpenSection({ section, index });
+    }
+  };
+
+  const isOpen = (section: SectionType, index: number) =>
+    openSection?.section === section && openSection.index === index;
 
   return (
     <aside className="text-base text-left text-foreground place-items-end content-end mx-auto sm:mx-0 max-w-[90%] sm:max-w-none">
@@ -19,8 +37,8 @@ export default function CV() {
           {softwareDesign.records.map((record, index) => (
             <li key={index} className="mb-1">
               <Collapsible.Root
-                open={openSDetail === index}
-                onOpenChange={(open) => setOpenSDetail(open ? index : null)}
+                open={isOpen("softwareDesign", index)}
+                onOpenChange={() => handleOpenChange("softwareDesign", index)}
               >
                 <Collapsible.Trigger asChild>
                   <div
@@ -41,19 +59,18 @@ export default function CV() {
                         : "text-foreground"
                     }`}
                   >
-                    {record.link && (
-                      <>
-                        <a
-                          href={record.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          -&gt;
-                        </a>
-                      </>
-                    )} {" "}
+                    {record.link ? (
+                      <a
+                        href={record.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        -&gt;
+                      </a>
+                    ) : (
+                      "///"
+                    )}{" "}
                     {record.description}
-                    <br />
                   </div>
                 </Collapsible.Content>
               </Collapsible.Root>
@@ -68,8 +85,8 @@ export default function CV() {
           {photo.records.map((record, index) => (
             <li key={index} className="mb-1">
               <Collapsible.Root
-                open={openPDetail === index}
-                onOpenChange={(open) => setOpenPDetail(open ? index : null)}
+                open={isOpen("photo", index)}
+                onOpenChange={() => handleOpenChange("photo", index)}
               >
                 <Collapsible.Trigger asChild>
                   <div
@@ -90,19 +107,18 @@ export default function CV() {
                         : "text-foreground"
                     }`}
                   >
-                    {record.link && (
-                      <>
-                        <a
-                          href={record.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          -&gt;
-                        </a>
-                      </>
+                    {record.link ? (
+                      <a
+                        href={record.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        -&gt;
+                      </a>
+                    ) : (
+                      "///"
                     )}{" "}
                     {record.description}
-                    <br />
                   </div>
                 </Collapsible.Content>
               </Collapsible.Root>
@@ -117,8 +133,8 @@ export default function CV() {
           {projects.records.map((record, index) => (
             <li key={index} className="mb-1">
               <Collapsible.Root
-                open={openPrDetail === index}
-                onOpenChange={(open) => setOpenPrDetail(open ? index : null)}
+                open={isOpen("projects", index)}
+                onOpenChange={() => handleOpenChange("projects", index)}
               >
                 <Collapsible.Trigger asChild>
                   <div
@@ -139,19 +155,18 @@ export default function CV() {
                         : "text-foreground"
                     }`}
                   >
-                   {record.link && (
-                      <>
-                        <br />
-                        <a
-                          href={record.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          -&gt;
-                        </a>
-                      </>
-                    )} {record.description}
-                    <br />
+                    {record.link ? (
+                      <a
+                        href={record.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        -&gt;
+                      </a>
+                    ) : (
+                      "///"
+                    )}{" "}
+                    {record.description}
                   </div>
                 </Collapsible.Content>
               </Collapsible.Root>
@@ -159,10 +174,7 @@ export default function CV() {
           ))}
         </ol>
         <br />
-        <li className="mb-4 font-[family-name:var(--font-bold-abc-diatype)]">
-          Computer Science & Fine Arts @ Yale University '26
-        </li>
-        <li className="font-[family-name:var(--font-bold-abc-diatype)]">
+        <li>
           <a href="mailto:kris.aziabor@yale.edu">Say hi :) -&gt;</a>
         </li>
       </ol>

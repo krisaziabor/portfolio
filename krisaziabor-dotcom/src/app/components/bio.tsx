@@ -12,7 +12,7 @@ export default function Bio() {
 
           <li>
             <a
-              href="http://krisaziabor.com/Design%20at%20Yale.pdf"
+              href="http://krisaziabor.com/PortfolioOct'24.pdf"
               target="_blank"
               className="hover:text-orange-400"
             >
