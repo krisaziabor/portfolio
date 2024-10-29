@@ -1,2 +1,6 @@
-# portfolio
-The current home for Kris Aziabor Dot Com. Full version 1 coming soon, documentation to be completed intermittently. 
+
+# Full site coming soon
+
+![Photo from the website](/krisaziabor-dotcom/public/sample.png)
+
+Let me cook.
