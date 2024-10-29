@@ -12,11 +12,10 @@ export default function Bio() {
 
           <li>
             <a
-              href="/PortfolioOct24.pdf"
-              download
+              href="https://drive.google.com/file/d/1Mn_xI3rUACQbDqLsFSNp4QMrsGxEOWOs/view?usp=sharing"
               className="hover:text-orange-400"
             >
-              Download my portfolio -&gt;
+              View my portfolio -&gt;
             </a>
           </li>
         </ol>
