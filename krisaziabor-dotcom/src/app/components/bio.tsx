@@ -13,10 +13,10 @@ export default function Bio() {
           <li>
             <a
               href="/PortfolioOct24.pdf"
-              target="_blank"
+              download
               className="hover:text-orange-400"
             >
-              View my portfolio -&gt;
+              Download my portfolio -&gt;
             </a>
           </li>
         </ol>
