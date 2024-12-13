@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#F8F6F3',
-        foreground: '#FE7631',
-        pastgrey: '#FFA477',
+        background: '#D23129',
+        foreground: '#F8F6F3',
+        pastgrey: 'rgba(248, 246, 243, 0.6)', // foreground with 50% opacity
       },
     },
   },
