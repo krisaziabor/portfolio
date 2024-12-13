@@ -19,8 +19,8 @@ const boldabcdiatype = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kris Aziabor /// Coming Soon",
-  description: "Creating striking, accessible designs with unconventional, yet powerful software. In development.",
+  title: "Kris Aziabor",
+  description: "Creating striking, accessible designs with unconventional & powerful software.",
   icons: "icon.ico",
 };
 
