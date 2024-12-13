@@ -13,7 +13,7 @@ export default function Bio() {
           <li>
             <a
               href="https://drive.google.com/file/d/1Mn_xI3rUACQbDqLsFSNp4QMrsGxEOWOs/view?usp=sharing"
-              className="hover:text-white"
+              className="hover:text-orange-400"
             >
               View my portfolio -&gt;
             </a>
