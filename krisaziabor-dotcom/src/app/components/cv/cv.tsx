@@ -44,7 +44,7 @@ export default function CV() {
                   <div
                     className={`cursor-pointer ${
                       record.status === "past"
-                        ? "text-pastorange"
+                        ? "text-pastgrey"
                         : "text-foreground"
                     }`}
                   >
@@ -55,7 +55,7 @@ export default function CV() {
                   <div
                     className={`mb-3 ${
                       record.status === "past"
-                        ? "text-pastorange"
+                        ? "text-pastgrey"
                         : "text-foreground"
                     }`}
                   >
@@ -92,7 +92,7 @@ export default function CV() {
                   <div
                     className={`cursor-pointer ${
                       record.status === "past"
-                        ? "text-pastorange"
+                        ? "text-pastgrey"
                         : "text-foreground"
                     }`}
                   >
@@ -103,7 +103,7 @@ export default function CV() {
                   <div
                     className={`mb-3 ${
                       record.status === "past"
-                        ? "text-pastorange"
+                        ? "text-pastgrey"
                         : "text-foreground"
                     }`}
                   >
@@ -140,7 +140,7 @@ export default function CV() {
                   <div
                     className={`cursor-pointer ${
                       record.status === "past"
-                        ? "text-pastorange"
+                        ? "text-pastgrey"
                         : "text-foreground"
                     }`}
                   >
@@ -151,7 +151,7 @@ export default function CV() {
                   <div
                     className={`mb-3 ${
                       record.status === "past"
-                        ? "text-pastorange"
+                        ? "text-pastgrey"
                         : "text-foreground"
                     }`}
                   >
