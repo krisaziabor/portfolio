@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         background: '#F8F6F3',
         foreground: '#FE7631',
-        pastorange: '#FFA477',
+        pastgrey: '#FFA477',
       },
     },
   },

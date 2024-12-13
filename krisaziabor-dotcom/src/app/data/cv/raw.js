@@ -5,7 +5,7 @@ export const rawData = {
       position: "Studio Member",
       status: "current",
       description:
-        "One of sixteen members at Yale’s only undergraduate design studio. Producing web design, development, and branding work for clients and own org.",
+        "One of ten members at Yale’s only undergraduate design studio. Producing web design, development, and branding work for clients and own org.",
       link: "https://designatyale.com",
       tags: [],
     },
@@ -24,7 +24,7 @@ export const rawData = {
       status: "past",
       description:
         "Worked at (now defunct) femtech health startup in Berlin, Germany. Revamped website with multi-language functionality, resolved bugs in alpha app, and create Figma prototype for improved onboarding user experience.",
-      link: "https://cyclio.app",
+      link: "https://cyclio.webflow.io/",
       tags: [],
     },
   ],
@@ -58,6 +58,33 @@ export const rawData = {
     },
   ],
   projects: [
+    {
+      institution: "Software for People",
+      position: null,
+      description:
+        "Class taken in Fall 2024: What is the relationship of life online to embodied experience? What is the interactive and performative potential of websites? How do you use the internet mindfully?",
+      status: "present",
+      link: "https://krisaziabor.github.io/interactive",
+      tags: [],
+    },
+    {
+      institution: "Linkus",
+      position: null,
+      description:
+        "A design case study restoring the original vision of hyperlinks to the modern search engine.",
+      status: "present",
+      link: null,
+      tags: [],
+    },
+    {
+      institution: "Kris Aziabor's Library",
+      position: null,
+      description:
+        "Creating a digital archive of my personal library, including all texts from my Yale courses, personal reading, and writing.",
+      status: "present",
+      link: null,
+      tags: [],
+    },
     {
       institution: "Linear Product Management Automation",
       position: null,
