@@ -5,7 +5,7 @@ export const rawData = {
       position: "Studio Member",
       status: "current",
       description:
-        "One of sixteen members at Yale’s only undergraduate design studio. Producing web design, development, and branding work for clients and own org.",
+        "One of ten members at Yale’s only undergraduate design studio. Producing web design, development, and branding work for clients and own org.",
       link: "https://designatyale.com",
       tags: [],
     },
