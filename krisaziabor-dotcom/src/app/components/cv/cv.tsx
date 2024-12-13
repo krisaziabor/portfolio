@@ -28,8 +28,8 @@ export default function CV() {
     openSection?.section === section && openSection.index === index;
 
   return (
-    <aside className="text-base text-left text-foreground place-items-end content-end mx-auto sm:mx-0 max-w-[90%] sm:max-w-none">
-      <ol className="flex flex-col items-end text-right">
+    <aside className="text-base text-left text-foreground place-items-end content-end mx-auto sm:mx-0 max-w-[90%] sm:max-w-none sm:text-right sm:items-end">
+      <ol className="flex flex-col items-start sm:items-end">
         <li className="mb-4 font-[family-name:var(--font-bold-abc-diatype)]">
           Software & Design
         </li>
@@ -127,7 +127,7 @@ export default function CV() {
         </ol>
         <br />
         <li className="mb-4 font-[family-name:var(--font-bold-abc-diatype)]">
-          Projects
+          Coursework, Case Studies & Projects
         </li>
         <ol>
           {projects.records.map((record, index) => (
