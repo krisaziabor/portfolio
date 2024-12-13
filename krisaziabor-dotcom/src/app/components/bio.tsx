@@ -8,12 +8,14 @@ export default function Bio() {
             Its morality and rebirth will always be the most beautiful.
           </li>
 
-          <li className="mb-4">Kris Aziabor Dot Com, coming back soon &lt;3</li>
+          <li className="mb-4">Kristopher (Kris) Aziabor is a Computer Science and Fine Arts major at Yale University 
+            <br />
+            creating striking visual design alongside powerful technology. &lt;3</li>
 
           <li>
             <a
               href="https://drive.google.com/file/d/1Mn_xI3rUACQbDqLsFSNp4QMrsGxEOWOs/view?usp=sharing"
-              className="hover:text-orange-400"
+              className="hover:text-red-400"
             >
               View my portfolio -&gt;
             </a>
