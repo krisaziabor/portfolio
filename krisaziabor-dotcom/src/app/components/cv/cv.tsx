@@ -41,24 +41,12 @@ export default function CV() {
                 onOpenChange={() => handleOpenChange("softwareDesign", index)}
               >
                 <Collapsible.Trigger asChild>
-                  <div
-                    className={`cursor-pointer ${
-                      record.status === "past"
-                        ? "text-pastgrey"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <div className="cursor-help text-foreground">
                     {record.institution}, {record.position}
                   </div>
                 </Collapsible.Trigger>
                 <Collapsible.Content asChild>
-                  <div
-                    className={`mb-3 ${
-                      record.status === "past"
-                        ? "text-pastgrey"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <div className="mb-3 text-foreground">
                     {record.link ? (
                       <a
                         href={record.link}
@@ -89,24 +77,12 @@ export default function CV() {
                 onOpenChange={() => handleOpenChange("photo", index)}
               >
                 <Collapsible.Trigger asChild>
-                  <div
-                    className={`cursor-pointer ${
-                      record.status === "past"
-                        ? "text-pastgrey"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <div className="cursor-help text-foreground">
                     {record.institution}, {record.position}
                   </div>
                 </Collapsible.Trigger>
                 <Collapsible.Content asChild>
-                  <div
-                    className={`mb-3 ${
-                      record.status === "past"
-                        ? "text-pastgrey"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <div className="mb-3 text-foreground">
                     {record.link ? (
                       <a
                         href={record.link}
@@ -137,24 +113,12 @@ export default function CV() {
                 onOpenChange={() => handleOpenChange("projects", index)}
               >
                 <Collapsible.Trigger asChild>
-                  <div
-                    className={`cursor-pointer ${
-                      record.status === "past"
-                        ? "text-pastgrey"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <div className="cursor-help text-foreground">
                     {record.institution}
                   </div>
                 </Collapsible.Trigger>
                 <Collapsible.Content asChild>
-                  <div
-                    className={`mb-3 ${
-                      record.status === "past"
-                        ? "text-pastgrey"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <div className="mb-3 text-foreground">
                     {record.link ? (
                       <a
                         href={record.link}
