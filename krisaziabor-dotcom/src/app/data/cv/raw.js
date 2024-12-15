@@ -77,6 +77,15 @@ export const rawData = {
       tags: [],
     },
     {
+      institution: "Bus Stops and Photo Plans",
+      position: null,
+      description:
+        "A website made for my Black Feminist Theory class, where I reflect on aspects of pop culture in conversation with course texts. I also produce detailed plans for future photo projects inspired by the course.",
+      status: "present",
+      link: "https://attehkojo.com",
+      tags: [],
+    },
+    {
       institution: "Kris Aziabor's Library",
       position: null,
       description:
