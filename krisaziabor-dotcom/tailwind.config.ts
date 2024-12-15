@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         background: '#D23129',
         foreground: '#F8F6F3',
-        pastgrey: 'rgba(248, 246, 243, 0.6)', // foreground with 50% opacity
+        // pastgrey: 'rgba(248, 246, 243, 0.6)', // foreground with 50% opacity
       },
     },
   },
