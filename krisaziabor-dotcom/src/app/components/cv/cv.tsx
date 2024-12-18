@@ -139,7 +139,7 @@ export default function CV() {
         </ol>
         <br />
         <li>
-          <a href="mailto:kris.aziabor@yale.edu">Say hi :) -&gt;</a>
+          <a href="mailto:kris.aziabor@yale.edu" className="hover:text-red-400">Say hi :) -&gt;</a>
         </li>
       </ol>
     </aside>
