@@ -1,5 +1,5 @@
-import Bio from "./components/bio";
-import CV from "./components/cv/cv";
+import Bio from "./ui/bio";
+import CV from "./ui/cv";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
-import {fetchRecords} from "../../data/cv/model"
-import { rawData, rawExtra } from "../../data/cv/raw"
+import {fetchRecords} from "../cv/model"
+import { rawData, rawExtra } from "../cv/raw"
 
 export const softwareDesign = fetchRecords(rawData, "software");
 export const photo = fetchRecords(rawData, "photo");

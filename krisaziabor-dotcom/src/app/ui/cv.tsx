@@ -1,6 +1,6 @@
 "use client";
 
-import { softwareDesign, photo, projects } from "./lists";
+import { softwareDesign, photo, projects } from "../lib/cv/lists";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import React from "react";
 
