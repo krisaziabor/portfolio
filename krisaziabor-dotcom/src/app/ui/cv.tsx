@@ -15,6 +15,7 @@ export default function CV() {
   const [openSection, setOpenSection] = React.useState<OpenSection | null>(
     null
   );
+  const [emailCopied, setEmailCopied] = React.useState(false);
 
   const handleOpenChange = (section: SectionType, index: number) => {
     if (openSection?.section === section && openSection.index === index) {
@@ -26,6 +27,12 @@ export default function CV() {
 
   const isOpen = (section: SectionType, index: number) =>
     openSection?.section === section && openSection.index === index;
+
+  const copyEmailToClipboard = () => {
+    navigator.clipboard.writeText("kris.aziabor@yale.edu");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
+  };
 
   return (
     <aside className="text-base text-left text-foreground place-items-end content-end mx-auto sm:mx-0 max-w-[90%] sm:max-w-none sm:text-right sm:items-end">
@@ -139,7 +146,9 @@ export default function CV() {
         </ol>
         <br />
         <li>
-          <a href="mailto:kris.aziabor@yale.edu" className="hover:text-red-400">Say hi :) -&gt;</a>
+          <button onClick={copyEmailToClipboard} className="hover:text-red-400">
+            {emailCopied ? "Email copied to clipboard!" : 'Say hi :) ->'}
+          </button>
         </li>
       </ol>
     </aside>
