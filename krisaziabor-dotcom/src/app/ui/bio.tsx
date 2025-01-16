@@ -5,7 +5,7 @@ export default function Bio() {
           <li className="mb-4">
             Any ambition to create timeless work renders it lifeless.
             <br />
-            Its morality and rebirth will always be the most beautiful.
+            Its mortality and rebirth will always be the most beautiful.
           </li>
 
           <li className="mb-4">Kristopher (Kris) Aziabor is a Computer Science and Fine Arts major at Yale University 
