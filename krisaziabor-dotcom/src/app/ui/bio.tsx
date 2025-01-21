@@ -9,13 +9,12 @@ export default function Bio() {
           </li>
 
           <li className="mb-4">Kristopher (Kris) Aziabor is a Computer Science and Fine Arts major at Yale University 
-            <br />
             creating striking visual design alongside powerful technology. &lt;3</li>
 
           <li>
             <a
               href="https://drive.google.com/file/d/1Mn_xI3rUACQbDqLsFSNp4QMrsGxEOWOs/view?usp=sharing"
-              className="hover:text-red-400"
+              className="hover:text-pastmaroon"
             >
               View my portfolio -&gt;
             </a>
