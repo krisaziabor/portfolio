@@ -146,7 +146,7 @@ export default function CV() {
         </ol>
         <br />
         <li>
-          <button onClick={copyEmailToClipboard} className="hover:text-red-400">
+          <button onClick={copyEmailToClipboard} className="hover:text-pastmaroon">
             {emailCopied ? "Email copied to clipboard!" : 'Say hi :) ->'}
           </button>
         </li>
