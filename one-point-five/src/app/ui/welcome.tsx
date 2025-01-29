@@ -26,14 +26,14 @@ export default function Bio() {
           <div className="col-span-4 flex items-center justify-center text-left">
             <div>
               <div className="mb-4">
-                <p className="font-[family-name:var(--font-bold-abc-diatype)]">
-                  Kris Aziabor Dot Com coming back soon
+                <p className="font-[family-name:var(--font-bold-fragment)]">
+                  Coming back soon
                 </p>
                 <p>I&apos;m cooking something you&apos;ll love I promise.</p>
               </div>
               <div className="gap-1">
-                <p className="font-[family-name:var(--font-bold-abc-diatype)]">
-                  What&apos;s new?
+                <p className="font-[family-name:var(--font-bold-fragment)]">
+                  While you wait,
                 </p>
                 <p>
                   <a
