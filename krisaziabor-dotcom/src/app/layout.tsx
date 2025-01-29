@@ -7,13 +7,13 @@ import "./globals.css";
 // inject({ mode: dev ? 'development' : 'production' });
 
 const abcdiatype = localFont({
-  src: "./fonts/ABCDiatypeEdu-Regular.otf",
+  src: "../../../fonts/ABCDiatypeEdu-Regular.otf",
   variable: "--font-abc-diatype",
   weight: "400",
 });
 
 const boldabcdiatype = localFont({
-  src: "./fonts/ABCDiatypeEdu-Bold.otf",
+  src: "../../../fonts/ABCDiatypeEdu-Bold.otf",
   variable: "--font-bold-abc-diatype",
   weight: "700",
 });
