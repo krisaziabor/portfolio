@@ -18,6 +18,8 @@ const boldabcdiatype = localFont({
   weight: "700",
 });
 
+
+
 export const metadata: Metadata = {
   title: "Kris Aziabor",
   description: "Creating striking, accessible designs with unconventional & powerful software.",

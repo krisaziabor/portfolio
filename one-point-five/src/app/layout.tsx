@@ -18,6 +18,12 @@ const boldabcdiatype = localFont({
   weight: "700",
 });
 
+const boldfragment = localFont({
+  src: "../../../fonts/PPFragment-TextBold.otf",
+  variable: "--font-bold-fragment",
+  weight: "700",
+});
+
 export const metadata: Metadata = {
   title: "On the way - Kris Aziabor",
   description: "Currently cooking up the second edition of my personal website.",
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${abcdiatype.variable} ${boldabcdiatype.variable} antialiased`}
+        className={`${abcdiatype.variable} ${boldabcdiatype.variable} ${boldfragment.variable} antialiased`}
       >
         {children}
       </body>
