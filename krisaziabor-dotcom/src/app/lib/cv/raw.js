@@ -2,10 +2,10 @@ export const rawData = {
   software: [
     {
       institution: "Design at Yale",
-      position: "Studio Member",
+      position: "Co-president",
       status: "current",
       description:
-        "One of ten members at Yale’s only undergraduate design studio. Producing web design, development, and branding work for clients and own org.",
+        "Leading Yale’s only undergraduate design studio. Producing web design, development, and branding work for clients and own org.",
       link: "https://designatyale.com",
       tags: [],
     },
