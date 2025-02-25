@@ -20,7 +20,7 @@ export default function Bio() {
 
         {/* Non-desktop only */}
         <li className="block sm:hidden">
-          Please move to desktop to view my portfolio.
+          Please move to desktop to enter the exhibition.
         </li>
       </ol>
     </main>
