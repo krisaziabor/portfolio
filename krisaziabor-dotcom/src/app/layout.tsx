@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Kris Aziabor",
     images: [
       {
-        url: "/preview.png",
+        url: "preview.png",
         width: 1200,
         height: 670,
       },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Kris Aziabor",
     description:
       "Creating striking, accessible designs with unconventional & powerful software.",
-    images: ["/preview.png"],
+    images: ["preview.png"],
   },
 };
 export default function RootLayout({
