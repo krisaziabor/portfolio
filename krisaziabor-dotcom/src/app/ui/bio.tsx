@@ -11,7 +11,7 @@ export default function Bio() {
         {/* Desktop only */}
         <li className="hidden sm:block">
           <a
-            href="https://www.figma.com/proto/eq2KKXViLciKuTcDiBmvkg/PERSONAL-WEBSITE?page-id=219%3A96&node-id=219-291&p=f&viewport=10034%2C-14480%2C0.8&t=VkQIBY52A5uf2lQf-1&scaling=contain&content-scaling=fixed&starting-point-node-id=219%3A291"
+            href="https://www.figma.com/proto/eq2KKXViLciKuTcDiBmvkg/PERSONAL-WEBSITE?page-id=219%3A96&node-id=219-291&p=f&viewport=4165%2C-7304%2C0.32&t=jCUx1QZ5E4oYo8Nn-8&scaling=contain&content-scaling=fixed&starting-point-node-id=219%3A291&hide-ui=1"
             className="hover:text-pastmaroon"
           >
             Enter exhibition (desktop only) -&gt;
