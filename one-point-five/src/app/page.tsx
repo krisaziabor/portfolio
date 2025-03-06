@@ -38,6 +38,8 @@ export default function Home() {
 
                 {/* Project Titles */}
                 <nav>
+                  {/* Name as home button */}
+                  {/* Projects list */}
                   {projects.map((project) => (
                     <div
                       key={project.id}
@@ -51,6 +53,14 @@ export default function Home() {
                       {project.title}
                     </div>
                   ))}
+                  <div
+                    className={`py-3 font-[family-name:var(--font-fragment)] cursor-pointer transition-colors duration-200 hover:text-gray-600 ${
+                      !selectedProject ? "font-[family-name:var(--font-italic-fragment)]" : ""
+                    }`}
+                    onClick={() => setSelectedProject(null)}
+                  >
+                    <b>Kristopher Atteh Kojo Aziabor</b>
+                  </div>
                 </nav>
               </div>
             </div>
@@ -71,6 +81,17 @@ export default function Home() {
             {/* Fixed footer with horizontally scrolling project list */}
             <div className="fixed bottom-0 left-0 right-0 bg-white z-10 border-t border-gray-100">
               <div className="overflow-x-auto whitespace-nowrap py-4 px-4">
+                {/* Name as home button */}
+                <button
+                  className={`inline-block mr-6 font-[family-name:var(--font-fragment)] transition-colors duration-200 hover:text-gray-600 ${
+                    !selectedProject ? "font-[family-name:var(--font-italic-fragment)]" : ""
+                  }`}
+                  onClick={() => setSelectedProject(null)}
+                >
+                  Kristopher Aziabor
+                </button>
+                
+                {/* Projects list */}
                 {projects.map((project) => (
                   <button
                     key={project.id}

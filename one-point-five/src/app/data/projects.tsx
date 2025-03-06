@@ -205,25 +205,6 @@ const projects = [
       </div>
     ),
   },
-  {
-    id: 10,
-    title:
-      "Kristopher Atteh Kojo Aziabor",
-    content: (
-      <div>
-        <h2 className="text-2xl font-bold mb-2">Joy Crookes is Back</h2>
-        <p className="mb-4">
-          This is a description of the Joy Crookes project. Replace this with
-          your actual project details.
-        </p>
-        <div className="mt-6">
-          <div className="w-full h-64 bg-gray-100 flex items-center justify-center text-gray-500">
-            Project Image
-          </div>
-        </div>
-      </div>
-    ),
-  },
 ];
 
 export { projects };
