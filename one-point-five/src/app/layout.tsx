@@ -24,6 +24,18 @@ const boldfragment = localFont({
   weight: "700",
 });
 
+const italicfragment = localFont({
+  src: "../../../fonts/PPFragment-GlareRegularItalic.otf",
+  variable: "--font-italic-fragment",
+  weight: "400",
+});
+
+const fragment = localFont({
+  src: "../../../fonts/PPFragment-GlareRegular.otf",
+  variable: "--font-fragment",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "On the way - Kris Aziabor",
   description: "Currently cooking up the second edition of my personal website.",
@@ -38,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${abcdiatype.variable} ${boldabcdiatype.variable} ${boldfragment.variable} antialiased`}
+        className={`${abcdiatype.variable} ${boldabcdiatype.variable} ${boldfragment.variable} ${fragment.variable} ${italicfragment.variable} antialiased`}
       >
         {children}
       </body>
