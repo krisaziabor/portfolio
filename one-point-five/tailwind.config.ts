@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        offwhite: '#F8F6F3',
+        toggled: '#8B8A88',
       },
     },
   },

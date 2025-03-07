@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface PhotoSeriesTemplateProps {
   title: string;
@@ -14,6 +14,16 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = images.length;
 
+  // Reset currentIndex when navigating to a new photo series
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [images]);
+  
+  // Safety check: ensure currentIndex is valid before rendering
+  if (currentIndex >= totalImages) {
+    setCurrentIndex(0); // Reset if out of bounds
+  }
+
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === totalImages - 1 ? 0 : prevIndex + 1
@@ -27,14 +37,17 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
     );
   };
 
+  // Make sure we have a valid current image before rendering
+  const currentImage = images[currentIndex] || images[0];
+
   return (
     <div className="photo-series">
       {/* Photo Container - Only shows current photo */}
       <div className="photo-container mb-8 cursor-pointer" onClick={nextImage}>
         <img
-          src={images[currentIndex].src}
+          src={currentImage.src}
           alt={`${title} - Image ${currentIndex + 1}`}
-          className="w-full h-auto ml-0"
+          className="w-4/5 h-auto ml-0"
         />
 
         {/* Minimal Pagination Indicator */}

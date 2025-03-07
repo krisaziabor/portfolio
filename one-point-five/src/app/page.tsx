@@ -1,13 +1,23 @@
 "use client";
 
-import { JSX, useState } from "react";
-import PhotoSeriesTemplate from "./templates/photo-template";
+import { JSX, useState, useEffect, useRef } from "react";
 
 // Import your actual project data from a separate file
-import { projects } from "./data/projects";
+import { projects, projectTypes } from "./data/projects";
 
-const defaultBio =
-  "Kristopher Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else. At Yale University, he leads the college's only design studio and majors in Computing and the Arts (Computer Science & Fine Arts).";
+const defaultBio = (
+  <>
+    <p className="mb-4">
+      Kristopher "Kris" Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
+    </p>
+    <p className="mb-4">
+      "Atteh Kojo" is his Ghanaian (Twi) name that tells the story of his birth – he is the oldest of twin brothers and was born on a Monday.
+    </p>
+    <p>
+      At Yale University, he leads the college's only design studio (Design at Yale) and majors in Computing and the Arts (Computer Science & Fine Arts).
+    </p>
+  </>
+);
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<{
@@ -16,9 +26,56 @@ export default function Home() {
     content: JSX.Element;
     description: string;
   } | null>(null);
+  
+  // New state for mobile navigation
+  const [selectedTypeID, setSelectedTypeID] = useState<number | null>(null);
+  
+  // Create a ref for the navigation container
+  const navContainerRef = useRef<HTMLDivElement>(null);
+
+  // Group projects by type
+  const groupedProjects = projectTypes.map(type => ({
+    type: type,
+    projects: projects.filter(project => project.typeID === type.typeID)
+  }));
+
+  // Handle project type selection in mobile view
+  const handleTypeClick = (typeID: number) => {
+    setSelectedTypeID(typeID);
+    
+    // Reset horizontal scroll position when changing types
+    if (navContainerRef.current) {
+      navContainerRef.current.scrollLeft = 0;
+    }
+  };
+
+  // Handle back button in mobile view
+  const handleBackClick = () => {
+    setSelectedTypeID(null);
+  };
+  
+  // Force a re-render and reset scroll position when type changes
+  useEffect(() => {
+    if (selectedTypeID !== null && navContainerRef.current) {
+      // Reset scroll position
+      navContainerRef.current.scrollLeft = 0;
+      
+      // Force an update to ensure all styles are properly applied
+      const forceUpdate = setTimeout(() => {
+        if (navContainerRef.current) {
+          // This subtle DOM manipulation forces a repaint
+          const currentScroll = navContainerRef.current.scrollLeft;
+          navContainerRef.current.scrollLeft = currentScroll + 1;
+          navContainerRef.current.scrollLeft = currentScroll;
+        }
+      }, 10);
+      
+      return () => clearTimeout(forceUpdate);
+    }
+  }, [selectedTypeID]);
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-offwhite text-black">
       <main className="flex justify-center min-h-screen">
         <div className="w-full max-w-6xl min-h-screen relative">
           {/* Desktop layout */}
@@ -32,34 +89,50 @@ export default function Home() {
             <div className="w-1/3 sticky top-0 h-screen">
               <div className="p-8 h-full flex flex-col justify-between">
                 {/* Description Text (Bio or Project Description) */}
-                <div className="text-sm mb-8">
+                <div className="text-sm font-[family-name:var(--font-fragment-sans)] mb-8">
                   {selectedProject ? selectedProject.description : defaultBio}
                 </div>
 
                 {/* Project Titles */}
                 <nav>
-                  {/* Name as home button */}
-                  {/* Projects list */}
-                  {projects.map((project) => (
-                    <div
-                      key={project.id}
-                      className={`py-3 font-[family-name:var(--font-fragment)] cursor-pointer transition-colors duration-200 hover:text-gray-600 ${
-                        selectedProject?.id === project.id
-                          ? "font-[family-name:var(--font-italic-fragment)]"
-                          : ""
-                      }`}
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      {project.title}
+                  {/* Projects grouped by type */}
+                  {groupedProjects.map((group) => (
+                    <div key={group.type.typeID} className="mb-4">
+                      {/* Project Type Header */}
+                      <div className="text-xs font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider mb-2 font-bold">
+                        {group.type.name}
+                      </div>
+                      
+                      {/* Projects */}
+                      {group.projects.map((project) => (
+                        <div
+                          key={project.id}
+                          className={`py-1.5 font-[family-name:var(--font-fragment-sans)] cursor-pointer transition-colors duration-200 hover:text-gray-600 ${
+                            selectedProject?.id === project.id
+                              ? "text-toggled"
+                              : ""
+                          }`}
+                          onClick={() => setSelectedProject(project)}
+                        >
+                          {project.title}
+                        </div>
+                      ))}
                     </div>
                   ))}
+                  
+                  {/* Home button */}
                   <div
                     className={`py-3 font-[family-name:var(--font-fragment)] cursor-pointer transition-colors duration-200 hover:text-gray-600 ${
-                      !selectedProject ? "font-[family-name:var(--font-italic-fragment)]" : ""
+                      !selectedProject
+                        ? "text-toggled"
+                        : ""
                     }`}
                     onClick={() => setSelectedProject(null)}
                   >
-                    <b>Kristopher Atteh Kojo Aziabor</b>
+                    <img
+                      src={selectedProject ? "/blk-KAKA.svg" : "/gray-KAKA.svg"}
+                      alt="Kristopher Atteh Kojo Aziabor"
+                    />
                   </div>
                 </nav>
               </div>
@@ -73,38 +146,74 @@ export default function Home() {
               {selectedProject && selectedProject.content}
 
               {/* Description Text (always visible on mobile too) */}
-              <div className="text-sm mt-8 pb-8">
+              <div className="text-sm mt-8 font-[family-name:var(--font-fragment-sans)] pb-24">
                 {selectedProject ? selectedProject.description : defaultBio}
               </div>
             </div>
 
-            {/* Fixed footer with horizontally scrolling project list */}
+            {/* Fixed footer with navigation */}
             <div className="fixed bottom-0 left-0 right-0 bg-white z-10 border-t border-gray-100">
-              <div className="overflow-x-auto whitespace-nowrap py-4 px-4">
-                {/* Name as home button */}
+              <div 
+                ref={navContainerRef}
+                className="overflow-x-auto whitespace-nowrap py-4 px-4"
+              >
+                {/* Home button with SVG toggle */}
                 <button
-                  className={`inline-block mr-6 font-[family-name:var(--font-fragment)] transition-colors duration-200 hover:text-gray-600 ${
-                    !selectedProject ? "font-[family-name:var(--font-italic-fragment)]" : ""
-                  }`}
-                  onClick={() => setSelectedProject(null)}
+                  className="inline-block mr-6 align-middle"
+                  onClick={() => {
+                    setSelectedProject(null);
+                    setSelectedTypeID(null);
+                  }}
                 >
-                  Kristopher Aziabor
+                  <img
+                    src={selectedProject ? "/blk-KAKA.svg" : "/gray-KAKA.svg"}
+                    alt="Kristopher Atteh Kojo Aziabor"
+                    className="h-6"
+                  />
                 </button>
-                
-                {/* Projects list */}
-                {projects.map((project) => (
-                  <button
-                    key={project.id}
-                    className={`inline-block mr-6 last:mr-0 font-[family-name:var(--font-fragment)] transition-colors duration-200 hover:text-gray-600 ${
-                      selectedProject?.id === project.id
-                        ? "font-[family-name:var(--font-italic-fragment)]"
-                        : ""
-                    }`}
-                    onClick={() => setSelectedProject(project)}
-                  >
-                    {project.title}
-                  </button>
-                ))}
+
+                {/* Two-level navigation */}
+                {selectedTypeID === null ? (
+                  // First level: Show only project types
+                  <>
+                    {projectTypes.map((type) => (
+                      <button
+                        key={type.typeID}
+                        className="inline-block mr-6 text-xs uppercase tracking-wider font-bold"
+                        onClick={() => handleTypeClick(type.typeID)}
+                      >
+                        {type.name}
+                      </button>
+                    ))}
+                  </>
+                ) : (
+                  // Second level: Show back button and projects for selected type
+                  <>
+                    <button
+                      className="inline-block mr-4 text-s font-[family-name:var(--font-bold-semi-diatype)]"
+                      onClick={handleBackClick}
+                    >
+                      ←
+                    </button>
+
+                    {/* Show projects for selected type with forced visibility */}
+                    {groupedProjects
+                      .find(group => group.type.typeID === selectedTypeID)
+                      ?.projects.map((project) => (
+                        <button
+                          key={project.id}
+                          className={`inline-block mr-6 font-[family-name:var(--font-fragment-sans)] transition-none ${
+                            selectedProject?.id === project.id
+                              ? "text-toggled"
+                              : "text-black"
+                          }`}
+                          onClick={() => setSelectedProject(project)}
+                        >
+                          {project.title}
+                        </button>
+                      ))}
+                  </>
+                )}
               </div>
             </div>
           </div>
