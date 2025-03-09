@@ -16,11 +16,21 @@ const WritingTemplate: React.FC<WritingTemplateProps> = ({
         <h2 className="text-xl mb-6">{title}</h2>
       )}
       
-      <div className="w-4/5 relative font-[family-name:var(--font-fragment-sans)]">
+      <div className="w-4/5 relative">
         {/* Render Markdown content */}
         <div className="pb-16">
+          {typeof content === 'string' ? (
           <ReactMarkdown
             components={{
+              h2: ({node, ...props}) => (
+                <h2 className="text-xl font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
+              ),
+              h3: ({node, ...props}) => (
+                <h3 className="text-lg font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
+              ),
+              h4: ({node, ...props}) => (
+                <h4 className="text-base font-[family-name:var(--font-semi-diatype)] mb-4" {...props} />
+              ),
               // Style the links to match your minimalist design
               a: ({node, ...props}) => (
                 <a 
@@ -32,7 +42,7 @@ const WritingTemplate: React.FC<WritingTemplateProps> = ({
               ),
               // Custom paragraph styling
               p: ({node, ...props}) => (
-                <p className="mb-4" {...props} />
+                <p className="mb-4 font-[family-name:var(--font-fragment-sans)]" {...props} />
               ),
               // italics
                 em: ({node, ...props}) => (
@@ -43,6 +53,9 @@ const WritingTemplate: React.FC<WritingTemplateProps> = ({
           >
             {content}
           </ReactMarkdown>
+          ) : (
+            content
+          )}
         </div>
       </div>
     </div>
