@@ -6,15 +6,15 @@ import "./globals.css";
  
 // inject({ mode: dev ? 'development' : 'production' });
 
-const abcdiatype = localFont({
-  src: "../../../fonts/ABCDiatypeEdu-Regular.otf",
-  variable: "--font-abc-diatype",
+const semidiatype = localFont({
+  src: "../../../fonts/ABCDiatypeSemi-MonoEdu-Regular.otf",
+  variable: "--font-semi-diatype",
   weight: "400",
 });
 
-const boldabcdiatype = localFont({
-  src: "../../../fonts/ABCDiatypeEdu-Bold.otf",
-  variable: "--font-bold-abc-diatype",
+const boldsemidiatype = localFont({
+  src: "../../../fonts/ABCDiatypeSemi-MonoEdu-Bold.otf",
+  variable: "--font-bold-semi-diatype",
   weight: "700",
 });
 
@@ -24,9 +24,21 @@ const boldfragment = localFont({
   weight: "700",
 });
 
+const fragmentsans = localFont({
+  src: "../../../fonts/PPFragment-SansRegular.otf",
+  variable: "--font-fragment-sans",
+  weight: "400",
+});
+
+const italicfragmentsans = localFont({
+  src: "../../../fonts/PPFragment-SansRegularItalic.otf",
+  variable: "--font-italic-fragment-sans",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "On the way - Kris Aziabor",
-  description: "Currently cooking up the second edition of my personal website.",
+  title: "Kris Aziabor",
+  description: "Atteh Kojo. Collective memories and knowledge above all else.",
   icons: "icon.ico",
 };
 
@@ -38,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${abcdiatype.variable} ${boldabcdiatype.variable} ${boldfragment.variable} antialiased`}
+        className={`${semidiatype.variable} ${boldsemidiatype.variable} ${boldfragment.variable} ${fragmentsans.variable} ${italicfragmentsans.variable} antialiased`}
       >
         {children}
       </body>
