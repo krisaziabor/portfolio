@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 // Rapid Photo Gallery component
 const RapidPhotoGallery = () => {
   // Array of image paths - replace with your actual images
-const images = Array.from({ length: 49 }, (_, i) => `/gallery/Frame${i === 0 ? '' : `-${i}`}.jpg`);
+const images = Array.from({ length: 41 }, (_, i) => `/flash-gallery/Gallery${i === 0 ? '' : `-${i}`}.jpg`);
     // Add more images as needed
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
