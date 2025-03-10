@@ -30,14 +30,30 @@ export default function Home() {
   // New state for mobile navigation
   const [selectedTypeID, setSelectedTypeID] = useState<number | null>(null);
   
-  // Create a ref for the navigation container
+  // Create refs for the navigation container and content container
   const navContainerRef = useRef<HTMLDivElement>(null);
+  const contentContainerRef = useRef<HTMLDivElement>(null);
+  const mobileContentContainerRef = useRef<HTMLDivElement>(null);
 
   // Group projects by type
   const groupedProjects = projectTypes.map(type => ({
     type: type,
     projects: projects.filter(project => project.typeID === type.typeID)
   }));
+
+  // Enhanced setSelectedProject function to also reset scroll
+  const handleProjectSelect = (project: typeof selectedProject) => {
+    setSelectedProject(project);
+    
+    // Reset content scroll positions
+    if (contentContainerRef.current) {
+      contentContainerRef.current.scrollTop = 0;
+    }
+    
+    if (mobileContentContainerRef.current) {
+      window.scrollTo(0, 0);
+    }
+  };
 
   // Handle project type selection in mobile view
   const handleTypeClick = (typeID: number) => {
@@ -74,14 +90,46 @@ export default function Home() {
     }
   }, [selectedTypeID]);
 
+  // Reset scroll when selected project changes
+  useEffect(() => {
+    // Reset content scroll positions
+    if (contentContainerRef.current) {
+      contentContainerRef.current.scrollTop = 0;
+    }
+    
+    // For mobile, use window.scrollTo
+    window.scrollTo(0, 0);
+  }, [selectedProject]);
+
   return (
     <div className="min-h-screen bg-offwhite text-black">
       <main className="flex justify-center min-h-screen">
         <div className="w-full max-w-6xl min-h-screen relative">
           {/* Desktop layout */}
           <div className="hidden md:flex">
-            {/* Left Column - Project Content (scrollable) */}
-            <div className="w-2/3 p-8">
+            {/* Left Column - Project Content (scrollable but with hidden scrollbar) */}
+            <div 
+              ref={contentContainerRef} 
+              className="w-2/3 p-8"
+              style={{
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                overflow: 'auto',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+            >
+              <style jsx global>{`
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                div::-webkit-scrollbar {
+                  display: none;
+                }
+
+                /* Hide scrollbar for IE, Edge and Firefox */
+                div {
+                  -ms-overflow-style: none;  /* IE and Edge */
+                  scrollbar-width: none;  /* Firefox */
+                }
+              `}</style>
               {selectedProject && selectedProject.content}
             </div>
 
@@ -112,7 +160,7 @@ export default function Home() {
                               ? "text-toggled"
                               : ""
                           }`}
-                          onClick={() => setSelectedProject(project)}
+                          onClick={() => handleProjectSelect(project)}
                         >
                           {project.title}
                         </div>
@@ -127,7 +175,7 @@ export default function Home() {
                         ? "text-toggled"
                         : ""
                     }`}
-                    onClick={() => setSelectedProject(null)}
+                    onClick={() => handleProjectSelect(null)}
                   >
                     <img
                       src={selectedProject ? "/blk-KAKA.svg" : "/gray-KAKA.svg"}
@@ -142,7 +190,10 @@ export default function Home() {
           {/* Mobile layout */}
           <div className="block md:hidden">
             {/* Content area */}
-            <div className="pt-4 px-4">
+            <div 
+              ref={mobileContentContainerRef}
+              className="pt-4 px-4 pb-24"
+            >
               {selectedProject && selectedProject.content}
 
               {/* Description Text (always visible on mobile too) */}
@@ -156,12 +207,19 @@ export default function Home() {
               <div 
                 ref={navContainerRef}
                 className="overflow-x-auto whitespace-nowrap py-4 px-4"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
+                <style jsx>{`
+                  div::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+                
                 {/* Home button with SVG toggle */}
                 <button
                   className="inline-block mr-6 align-middle"
                   onClick={() => {
-                    setSelectedProject(null);
+                    handleProjectSelect(null);
                     setSelectedTypeID(null);
                   }}
                 >
@@ -207,7 +265,7 @@ export default function Home() {
                               ? "text-toggled"
                               : "text-black"
                           }`}
-                          onClick={() => setSelectedProject(project)}
+                          onClick={() => handleProjectSelect(project)}
                         >
                           {project.title}
                         </button>
