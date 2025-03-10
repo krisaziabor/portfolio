@@ -21,11 +21,11 @@ const defaultBio = (
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<{
-    id: number;
-    title: string;
-    content: JSX.Element;
-    description: string;
-  } | null>(null);
+      id: number;
+      title: string;
+      content: JSX.Element;
+      description: string | JSX.Element;
+    } | null>(null);
   
   // New state for mobile navigation
   const [selectedTypeID, setSelectedTypeID] = useState<number | null>(null);
@@ -128,6 +128,9 @@ export default function Home() {
                 div {
                   -ms-overflow-style: none;  /* IE and Edge */
                   scrollbar-width: none;  /* Firefox */
+                }
+                div::-webkit-scrollbar {
+                  display: none;
                 }
               `}</style>
               {selectedProject && selectedProject.content}
