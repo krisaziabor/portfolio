@@ -4,18 +4,48 @@ import { JSX, useState, useEffect, useRef } from "react";
 
 // Import your actual project data from a separate file
 import { projects, projectTypes } from "./data/projects";
+import RapidPhotoGallery from "./ui/flashgallery";
 
 const defaultBio = (
   <>
     <p className="mb-4">
-      Kristopher "Kris" Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
+      Kris Atteh Kojo Aziabor is a product obsessive who uses design, software,
+      & fine arts to uplift collective memories and knowledge above all else.
     </p>
     <p className="mb-4">
-      "Atteh Kojo" is his Ghanaian (Twi) name that tells the story of his birth – he is the oldest of twin brothers and was born on a Monday.
+      In his third year at Yale University, he leads the college&apos;s only
+      design studio (Design at Yale) and majors in Computing and the Arts
+      (Computer Science & Fine Arts).
     </p>
-    <p>
-      At Yale University, he leads the college's only design studio (Design at Yale) and majors in Computing and the Arts (Computer Science & Fine Arts).
-    </p>
+    <div>
+      <p className="font-[family-name:var(--font-fragment-sans)]">
+        Download my CV{" "}
+        <span className="font-[family-name:var(--font-semi-diatype)]">
+          -&gt;
+        </span>
+      </p>
+      <p
+        className="font-[family-name:var(--font-fragment-sans)] cursor-pointer"
+        onClick={() => {
+          navigator.clipboard.writeText("kris.aziabor@yale.edu");
+          const originalText = "Say hi ->";
+          const element = document.querySelector(".say-hi-text");
+          if (element) {
+            element.textContent = "Email copied to clipboard!";
+            setTimeout(() => {
+              element.textContent = originalText;
+            }, 2000);
+          }
+        }}
+      >
+        <span className="say-hi-text">
+          Say hi{" "}
+          <span className="font-[family-name:var(--font-semi-diatype)]">
+            -&gt;
+          </span>
+        </span>
+      </p>
+    </div>
   </>
 );
 
@@ -24,32 +54,32 @@ export default function Home() {
     id: number;
     title: string;
     content: JSX.Element;
-    description: string;
+    description: string | JSX.Element;
   } | null>(null);
-  
+
   // New state for mobile navigation
   const [selectedTypeID, setSelectedTypeID] = useState<number | null>(null);
-  
+
   // Create refs for the navigation container and content container
   const navContainerRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const mobileContentContainerRef = useRef<HTMLDivElement>(null);
 
   // Group projects by type
-  const groupedProjects = projectTypes.map(type => ({
+  const groupedProjects = projectTypes.map((type) => ({
     type: type,
-    projects: projects.filter(project => project.typeID === type.typeID)
+    projects: projects.filter((project) => project.typeID === type.typeID),
   }));
 
   // Enhanced setSelectedProject function to also reset scroll
   const handleProjectSelect = (project: typeof selectedProject) => {
     setSelectedProject(project);
-    
+
     // Reset content scroll positions
     if (contentContainerRef.current) {
       contentContainerRef.current.scrollTop = 0;
     }
-    
+
     if (mobileContentContainerRef.current) {
       window.scrollTo(0, 0);
     }
@@ -58,7 +88,7 @@ export default function Home() {
   // Handle project type selection in mobile view
   const handleTypeClick = (typeID: number) => {
     setSelectedTypeID(typeID);
-    
+
     // Reset horizontal scroll position when changing types
     if (navContainerRef.current) {
       navContainerRef.current.scrollLeft = 0;
@@ -69,13 +99,13 @@ export default function Home() {
   const handleBackClick = () => {
     setSelectedTypeID(null);
   };
-  
+
   // Force a re-render and reset scroll position when type changes
   useEffect(() => {
     if (selectedTypeID !== null && navContainerRef.current) {
       // Reset scroll position
       navContainerRef.current.scrollLeft = 0;
-      
+
       // Force an update to ensure all styles are properly applied
       const forceUpdate = setTimeout(() => {
         if (navContainerRef.current) {
@@ -85,7 +115,7 @@ export default function Home() {
           navContainerRef.current.scrollLeft = currentScroll;
         }
       }, 10);
-      
+
       return () => clearTimeout(forceUpdate);
     }
   }, [selectedTypeID]);
@@ -96,7 +126,7 @@ export default function Home() {
     if (contentContainerRef.current) {
       contentContainerRef.current.scrollTop = 0;
     }
-    
+
     // For mobile, use window.scrollTo
     window.scrollTo(0, 0);
   }, [selectedProject]);
@@ -108,14 +138,14 @@ export default function Home() {
           {/* Desktop layout */}
           <div className="hidden md:flex">
             {/* Left Column - Project Content (scrollable but with hidden scrollbar) */}
-            <div 
-              ref={contentContainerRef} 
+            <div
+              ref={contentContainerRef}
               className="w-2/3 p-8"
               style={{
                 /* Hide scrollbar for Chrome, Safari and Opera */
-                overflow: 'auto',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none'
+                overflow: "auto",
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
               }}
             >
               <style jsx global>{`
@@ -126,11 +156,19 @@ export default function Home() {
 
                 /* Hide scrollbar for IE, Edge and Firefox */
                 div {
-                  -ms-overflow-style: none;  /* IE and Edge */
-                  scrollbar-width: none;  /* Firefox */
+                  -ms-overflow-style: none; /* IE and Edge */
+                  scrollbar-width: none; /* Firefox */
+                }
+                div::-webkit-scrollbar {
+                  display: none;
                 }
               `}</style>
-              {selectedProject && selectedProject.content}
+              {/* Show selected project content or rapid photo gallery */}
+              {selectedProject ? (
+                selectedProject.content
+              ) : (
+                <RapidPhotoGallery />
+              )}
             </div>
 
             {/* Right Column - Description Text and Project Titles (sticky) */}
@@ -150,7 +188,7 @@ export default function Home() {
                       <div className="text-xs font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider mb-2 font-bold">
                         {group.type.name}
                       </div>
-                      
+
                       {/* Projects */}
                       {group.projects.map((project) => (
                         <div
@@ -167,13 +205,11 @@ export default function Home() {
                       ))}
                     </div>
                   ))}
-                  
+
                   {/* Home button */}
                   <div
                     className={`py-3 font-[family-name:var(--font-fragment)] cursor-pointer transition-colors duration-200 hover:text-gray-600 ${
-                      !selectedProject
-                        ? "text-toggled"
-                        : ""
+                      !selectedProject ? "text-toggled" : ""
                     }`}
                     onClick={() => handleProjectSelect(null)}
                   >
@@ -190,11 +226,13 @@ export default function Home() {
           {/* Mobile layout */}
           <div className="block md:hidden">
             {/* Content area */}
-            <div 
-              ref={mobileContentContainerRef}
-              className="pt-4 px-4 pb-24"
-            >
-              {selectedProject && selectedProject.content}
+            <div ref={mobileContentContainerRef} className="pt-4 px-4 pb-24">
+              {/* Show selected project content or rapid photo gallery */}
+              {selectedProject ? (
+                selectedProject.content
+              ) : (
+                <RapidPhotoGallery />
+              )}
 
               {/* Description Text (always visible on mobile too) */}
               <div className="text-sm mt-8 font-[family-name:var(--font-fragment-sans)] pb-24">
@@ -204,17 +242,17 @@ export default function Home() {
 
             {/* Fixed footer with navigation */}
             <div className="fixed bottom-0 left-0 right-0 bg-white z-10 border-t border-gray-100">
-              <div 
+              <div
                 ref={navContainerRef}
                 className="overflow-x-auto whitespace-nowrap py-4 px-4"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 <style jsx>{`
                   div::-webkit-scrollbar {
                     display: none;
                   }
                 `}</style>
-                
+
                 {/* Home button with SVG toggle */}
                 <button
                   className="inline-block mr-6 align-middle"
@@ -256,7 +294,7 @@ export default function Home() {
 
                     {/* Show projects for selected type with forced visibility */}
                     {groupedProjects
-                      .find(group => group.type.typeID === selectedTypeID)
+                      .find((group) => group.type.typeID === selectedTypeID)
                       ?.projects.map((project) => (
                         <button
                           key={project.id}

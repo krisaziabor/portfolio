@@ -9,7 +9,6 @@ interface PhotoSeriesTemplateProps {
 const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
   title,
   images,
-  description,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = images.length;
@@ -30,13 +29,6 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
     );
   };
 
-  const prevImage = (e) => {
-    e.stopPropagation(); // Prevent triggering the parent div click
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalImages - 1 : prevIndex - 1
-    );
-  };
-
   // Make sure we have a valid current image before rendering
   const currentImage = images[currentIndex] || images[0];
 
@@ -52,7 +44,7 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
 
         {/* Minimal Pagination Indicator */}
         <div className="mt-2 text-xs font-[family-name:var(--font-semi-diatype)] text-gray-500">
-          {currentIndex + 1}/{totalImages}
+          {currentIndex + 1} OF {totalImages}
         </div>
       </div>
     </div>
