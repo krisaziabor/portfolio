@@ -46,7 +46,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
             <ReactMarkdown
             components={{
               h2: ({...props}) => (
-                <h2 className="text-xl font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
+                <h2 className="text-xl font-[family-name:var(--font-bold-semi-diatype)] mt-8 mb-6" {...props} />
               ),
               h3: ({...props}) => (
                 <h3 className="text-base font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
