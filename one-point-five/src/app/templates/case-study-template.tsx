@@ -21,7 +21,6 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
   title,
   coverImage,
   content,
-  metadata
 }) => {
   return (
     <div className="case-study-piece relative">
@@ -46,20 +45,20 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
           {typeof content === 'string' ? (
             <ReactMarkdown
             components={{
-              h2: ({node, ...props}) => (
+              h2: ({...props}) => (
                 <h2 className="text-xl font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
               ),
-              h3: ({node, ...props}) => (
+              h3: ({...props}) => (
                 <h3 className="text-base font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
               ),
-              h4: ({node, ...props}) => (
+              h4: ({...props}) => (
                 <h4 className="text-sm font-[family-name:var(--font-semi-diatype)] mb-4" {...props} />
               ),
-              h5: ({node, ...props}) => (
+              h5: ({...props}) => (
                 <h5 className="text-sm text-center font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
               ),
               // Style the links to match your minimalist design
-              a: ({node, ...props}) => (
+              a: ({...props}) => (
                 <a 
                   className="underline hover:text-gray-600" 
                   target="_blank" 
@@ -68,15 +67,15 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
                 />
               ),
               // Custom paragraph styling
-              p: ({node, ...props}) => (
+              p: ({...props}) => (
                 <p className="mb-4 font-[family-name:var(--font-fragment-sans)]" {...props} />
               ),
               // italics
-                em: ({node, ...props}) => (
+                em: ({...props}) => (
                     <em className="font-[family-name:var(--font-italic-fragment-sans)]" {...props} />
                 ),
                 // bold
-                strong: ({node, ...props}) => (
+                strong: ({...props}) => (
                     <strong className="font-[family-name:var(--font-bold-fragment)]" {...props} />
                 ),
               // You can add more custom component styling here

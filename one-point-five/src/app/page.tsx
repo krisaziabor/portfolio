@@ -8,13 +8,13 @@ import { projects, projectTypes } from "./data/projects";
 const defaultBio = (
   <>
     <p className="mb-4">
-      Kristopher "Kris" Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
+      Kris Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
     </p>
     <p className="mb-4">
-      "Atteh Kojo" is his Ghanaian (Twi) name that tells the story of his birth – he is the oldest of twin brothers and was born on a Monday.
+      &quot;Atteh&quot; Kojo is his Ghanaian (Twi) name that tells the story of his birth – he is the oldest of twin brothers and was born on a Monday.
     </p>
     <p>
-      At Yale University, he leads the college's only design studio (Design at Yale) and majors in Computing and the Arts (Computer Science & Fine Arts).
+      In his third year at Yale University, he leads the college&apos;s only design studio (Design at Yale) and majors in Computing and the Arts (Computer Science & Fine Arts).
     </p>
   </>
 );

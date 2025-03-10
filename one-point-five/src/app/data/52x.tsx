@@ -14,7 +14,7 @@ const fiftytwox = {
         <br />
         From open-source software to solving short design briefs or even making
         album covers for friends, I will craft something new each week and
-        reflect in a year's time.
+        reflect in a year&apos;s time.
         <br />
         <br />
         Beginning on March 10. Individual website to come.
