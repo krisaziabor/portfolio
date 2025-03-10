@@ -9,7 +9,6 @@ interface PhotoSeriesTemplateProps {
 const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
   title,
   images,
-  description,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = images.length;
@@ -27,13 +26,6 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === totalImages - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevImage = (e) => {
-    e.stopPropagation(); // Prevent triggering the parent div click
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalImages - 1 : prevIndex - 1
     );
   };
 
