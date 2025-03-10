@@ -80,6 +80,31 @@ const photos = [
       />
     ),
   },
+  {
+    id: 10,
+    title: "Emirates",
+    description: (
+      <p>
+        2024. Inkjet prints. DSLR.
+        <br />
+        <br />
+        Emirates Stadium. Arsenal F.C. London.
+      </p>
+    )
+    ,
+    typeID: 2,
+    content: (
+      <PhotoSeriesTemplate
+        title="Emirates"
+        images={[
+          {
+            src: "/Emirates.jpg", // Replace with your actual image paths
+          },
+        ]}
+        description=""
+      />
+    ),
+  },
   // PHOTO SERIES TEMPLATE FOR PANOPTICON
   {
     id: 5,

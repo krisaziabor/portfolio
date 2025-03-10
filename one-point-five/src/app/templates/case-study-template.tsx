@@ -53,7 +53,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
                 <h3 className="text-base font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
               ),
               h4: ({node, ...props}) => (
-                <h4 className="text-sm font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />
+                <h4 className="text-sm font-[family-name:var(--font-semi-diatype)] mb-4" {...props} />
               ),
               h5: ({node, ...props}) => (
                 <h5 className="text-sm text-center font-[family-name:var(--font-bold-semi-diatype)] mb-4" {...props} />

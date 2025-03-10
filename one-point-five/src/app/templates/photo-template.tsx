@@ -51,7 +51,7 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
         />
 
         {/* Minimal Pagination Indicator */}
-        <div className="mt-2 text-xs text-gray-500">
+        <div className="mt-2 text-xs font-[family-name:var(--font-semi-diatype)] text-gray-500">
           {currentIndex + 1}/{totalImages}
         </div>
       </div>

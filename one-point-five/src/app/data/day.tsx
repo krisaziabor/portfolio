@@ -18,74 +18,116 @@ const designatyale = {
   content: (
     <CaseStudyTemplate
       coverImage={{
-        src: "/DAY-cover.jpg",
-        alt: "",
+        src: "/AlternateCover-DAY.jpg",
+        alt: "Design at Yale cover image",
       }}
       metadata={{
         description:
-          "Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.",
+          "",
         workType:
-          "Coursework (Interactive Design and the Internet: Software for People & upcoming thesis)",
-        discipline: "Product design, Product research",
-        techStack: "Figma",
-        acknowledgements: "Zack Hauptman, Alvin Ashiatey, Theo Haggins",
+          "",
+        discipline: "",
+        techStack: "",
+        acknowledgements: "",
       }}
       content={`
-  After I heard of Design at Yale for the first time, I knew it was a group I wanted to be a part of. After a rejected application my second year, I applied once more and successfully joined the studio this fall. After a semester of leading projects, I now serve as a co-president. The DAY community is by far the most special one I’ve come across at Yale, and I couldn’t be prouder to lead it.
+  After I heard of Design at Yale for the first time, I knew it was a group I wanted to be a part of. After a rejected application my second year, I told my friend from home that I spend the next two semesters producing design work to change my fate. In September 2024, I applied once more and successfully joined the studio. After a semester of leading projects, I now proudly serve as a co-president. The DAY community is by far the most special family I’ve come across at Yale, and I couldn’t be happier to lead it.
   
   ### A QUICK NOTE
   This case study will be routinely updated as projects become finalized and can be fully shared (many are still under studio review & are for internal viewing only).
 
   ## STUDIO LEADERSHIP
+
+  In my first few months in the leadership role, I have instituted some meaningful changes to make DAY better at its purpose: creating fantastic design & establishing a strong Yale design community.
+
   ### PRODUCT MANAGEMENT WORKFLOW
-  In January 2024, I signed an offer to join Fidelity in the summer as a full-stack software engineering intern. 
-  As a member of CAPE (Cloud and Platform Engineering), I sat on the Managed File Transfer (MFT) team alongside two other interns.
-  Initially tasked only with producing a feasibility study for a third-party MFT application, we pitched and then began work on a internal full-stack app MVP to provide Fidelity clients and employees with a universal MFT solution.
+
+  #### EMBRACING IMESSAGE GCS, SAYING BYE TO SLACK
+  ![DAY Messages](DAY-MESSAGE.jpg)
+  ##### At some point, you have to consider that some of the least professionally-tailored tools will do the job the best.
+  
+  At the start of the year, the studio wanted to improve communication across teams and projects. The board decided to experiment with Slack, but it became clear most DAY conversations were happening on iMessage.
+  I proposed to formalize this practice, leaving Slack behind and opting for the software our whole studio was already using.
+
+  #### WELCOMING LINEAR
+  ![DAY Domination Spreadsheet](DAY-DOMINATION.jpg)
+  ##### Named the "very important master schedule for world domination," this spreadsheet was the studio's previous method of tracking projects. The principle was valuable but like Slack, it was largely unused.
+
+  While I embraced the simplicity and familiarity of iMessage for studio communication, I pushed for the addition of professional product management software.
+  [Linear](https://linear.app) is a product I have admired for years, and I was so excited to introduce it to everyone in the studio.
+  By establishing a system that everyone documents their work in, my co-pres [Aditya](https://adityadas.design) and I can easily track progress and cut at least ten minutes of status update chats from the weekly studio meetings.
+
+  #### FUTURE PLANS OF CLIENT DASHBOARD
+  By leveraging Linear’s API via GraphQL, I am currently developing a dashboard where our clients can easily access deliverables but most importantly, have up-to-date information on the status of their projects. There will be a degree of obscurity when it comes to the information shown (all good working relationships require a degree of trust and privacy), but the website will bolster our professionalism and hopefully make our clients’ lives easier.
 
   ### INCREASING ACCESSIBILITY TO DAY-LEVEL DESIGN
-  Managed file transfer (MFT) software is vital for people and groups who want to securely exchange data. A financial company like Fidelity wants to keep their intellectual property private as well as maintain a reputation as a trustworthy fiduciary. Especially given that the company wards off thousands of hackers in a given day (according to one of my bosses), powerful and easy-to-use MFT software is paramount for the company’s prospects.
-
-  When I arrived in June, the MFT team was beginning an era of far-reaching change. The on-prem MFT servers that the company had used for several years were becoming increasingly unsustainable. Compared to the cloud, on-prem servers have a fixed price point that does not fluctuate even though usage will realistically fall and rise throughout a calendar year. Its rigidness leaves Fidelity footing an unnecessarily expensive bill while also forcing them to scramble for inefficient backup options in the event of an outage. Additionally, the MFT client connected to the server no longer was supported by the vendor, meaning any vulnerability in the system would not be rectified. Finally, the outdated UI that was central to the software left employees struggling every week – many would take time out of their day to join my team’s office hours for troubleshooting. Basically, the managed file transfer systems were on the verge of being dangerously unmanaged.
+  When I first got rejected from DAY, I knew I needed to create more design work. The issue was I did not know where to start. A central initiative I have for the [current website](https://www.designatyale.com/) is to create a repository of resources and small quotes of advice from our designers.
+  Everyone specializes in their own things, so to have a centralized place where you can find guidance across disciplines will lessen the gaps of access and foster a more together design community.
 
   ### PROTECTING THE DAY BRAND & OUR DESIGNERS
+  As co-president, I have met with long-standing clients and worked with them to improve practices of communication and product handoff. This will ensure they have designs they love every time and that our designers and their labor are respected.
 
   ## STUDIO WORK
 
-  ### DAY BOOK 24
+  ### DAY BOOK 24 – DIRECTOR OF WEB DESIGN & DEVELOPMENT
 
-  ### YALE COMPUTER SOCIETY
+  When I joined the studio in September, one of my first two projects was to bring our artist book to life on the web.
+  I was so so happy – Gabby and Aditya had gifted me a whole baby project of my own, as I was assigned to lead all research, design, and development.
 
-  ### YALECLUBS
+  How does one take a book & its contents and transfer it onto the web?
+  Do you create the site as merely a host of static images where a user can tap through each page of the book?
+  Do you abandon all ties to the book & its aesthetics, creating something completely separate?
 
-  #### RESEARCH
-  To find out what we needed from JScape, we started by looking at the functionality of the current system. From ad hoc to SFTP, we spent days testing the full set of features that the current set of products had to offer. We also attended office hours hosted by our mentors, where they would help employees set up accounts and troubleshoot. By simply sitting in the background, we quickly knew what the existing MFT tools did well and where they fell short.
+  #### PUBLIC FRONT-FACING SITE
 
-  #### TESTING
-  Every Tuesday and Thursday afternoon was filled with a 2.5 hour meeting with Redwood (creators of JScape) representatives, as they answered our questions and guided us through the more complex features of their product. As an intern on the team, I led several meetings by walking through the software as other members took note.
+  I dictated design, tech archicture/stack, and currently lead web development.
+  I am using a backend of AWS & PostgreSQL alongside a frontend of Next.js & TypeScript.
 
-  #### DOCUMENTING & PRESENTING FINAL FINDINGS
-  As the internship came to a close, we stopped meeting with Redwood and began to test the product individually. From seeing how many authentication methods are sufficiently supported to understanding what file size was too big for the server to handle, I conducted several tests and reported my findings to the leaders of CAPE and Enterprise Technology.
-  While it was not a project I was expected to be given, I thought the experience of doing research on stakeholders, market competitors, and the necessary functionality of a potentially integrated product sparked my interest in product management and design to a higher level.
+  ![DAY Book 24](1-DAY.jpg)
+  ##### The design for the physical DAY BOOK 24. Served as the foundation for the web design.
+  \n
+  ![DAY Book 24](2-DAY.jpg)
+  ##### Mockup of web DAY BOOK 24. Each piece is linked to an index number which is central to navigating the site.
+  ![DAY Book 24](3-DAY.png)
+  ##### Main page places a index in the center of the web experience. Searching for an artist or graduation year will filter relevant pieces. Type a number on desktop to instantly jump to a single page.
 
-  ### MFT UNIVERSAL CLIENT MVP
-  Maybe a week after receiving the case study project, Shash, Jenny, and I looked at each other and knew we wanted to get our hands dirty and create a full-stack project. We put together a slide deck, requested to meet with our bosses, and proposed our idea: an in-house web client bringing together multiple file protocols under a familiar UI. We knew that Fidelity employees were struggling to familiarize themselves with the nuances of each protocol’s application (SFTP, Ad Hoc, HTTPS, etc) and our coworkers in the MFT team were spending hours on call to support them. Bringing as many as the protocols together under one platform was the central goal. We used JScape’s API for all the central functionality and utilized a Python Django stack with Tailwind for seamless styling and backend management. By using the Figma handoff features, I was able to dramatically cut down time for our team between the design and implementation stages.
+  #### PRIVATE ADMIN DASHBOARD
 
-  Ultimately, we were able to make a full Figma prototype and break ground on the coded MVP. We would have liked to achieve more with the project, but we left our work in good hands for the rest of the team to build from our foundation.
+  One of the main things I always consider when building on the web is friction. It is not something to shy away from – functionality with friction can keep users purposefully engaged and interested. At the same time, some forms of friction can detract from the user experience.
 
-  ## REFLECTION
+  Wanting to avoid users from leaving the site to pre-order a physical copy of the book, I used AWS Lambda & PostreSQL to allow users to purchase directly from the site. 
+  In addition (and most importantly), I used the same stack alongside Clerk & Shadcn UI elements to create a private admin dashboard for the studio to seamlessly fulfill orders on a unified platform.
 
-  The two plus months I spent in the Merrimack office surprised me in almost every way. 
+  Without this workflow, users would have to fill out a Google Form, where studio members would manually verify payments, contact users, and then fulfill orders. Not only time-consuming, this process has a high potential for inconsistencies and user error.
 
-  I gained a lot of perspective on what it means to work in technology within the financial world. My co-interns and I expected to be done with the case study in a matter of weeks but we soon learned that this was naive. We needed to get past company security checkpoints, troubleshoot with outside companies, and do lots and lots of waiting. We were only able to wrap things up in our penultimate week and were not able to finalize as much of the MVP as we would have liked. This is not a damning indictment on us or the company but simply just the realities of the job – your desire to produce may be much quicker than your ability to get the job done.
+  ![DAY Book Admin 24](3-DAYBOOKADMIN.jpg)
+  \n
+  ![DAY Book Admin 24](1-DAYBOOKADMIN.jpg)
+  ##### The stages an order goes through in the admin dashboard. To make sure all actions are considered and to reduce the potential for error, each order must go through every stage (excluding customer action required).
 
-  These slight disappointments exist, but they do not change the fact that the internship was a wonderful experience.
+  This will radically improve the user experience on the front-facing website as well as making the studio's life easier. Easy win-win.
 
-  Beyond my work as a full-stack software engineer, I had become the team’s scrum master, crafted the slides decks used in senior member presentations, and  conducted research for a product prototype. 
+  ### YALE COMPUTER SOCIETY – CREATIVE DIRECTOR
 
-  In just ten weeks, I dove deep into the world of MFT (managed file transfer, a concept I had never heard of prior), presented my work to various groups of senior leadership, did work befitting of a product designer, researcher, and manager, and even sprinkled in some intense pickleball playing (me and Melissa still have our undefeated record btw).
+  ![YCS Logo Marks](YCS.jpg)
 
-  It was a wonderful second internship and I will forever be grateful for all who made it possible \<3
+  I served as the creative director for Yale Computer Society's rebrand. After a massive few years that has given the club the title of Yale's biggest CS student org, I shifted the brand into a bold while also minimalistic direction.
+  I am developing the new website for the club this semester.
 
+  ### YALECLUBS – DESIGN CONSULTANT & UI/UX DESIGNER
+  
+  YaleClubs, a website by Yale Computer Society, requested a design consultation by DAY members. Across two meetings, Aditya, Lily, and I met with the client and offered critiques on their existing designs as well as establishing a list of priority changes to be made.
+
+  ![YaleClubs](YaleClubs.jpg)
+  ##### Mockups of organization and event modals produced during consultation with YaleClubs. 
+  \n
+  \n
+  ## MORE ON THE WAY <3
+  ![DAY event](DAYEVENT.jpg)
+
+  *As projects are still under studio review or are in progress, full case studies for each project will be released this summer. Talk to you soon :)
+  
+  Visit the DAY website [here](https://www.designatyale.com/).
   `}
     />
   ),
