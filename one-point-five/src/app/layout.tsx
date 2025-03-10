@@ -31,7 +31,7 @@ const fragmentsans = localFont({
 });
 
 const italicfragmentsans = localFont({
-  src: "../../../fonts/PPFragment-SansRegularItalic.otf",
+  src: "../../../fonts/PPFragment-SansRegularitalic.otf",
   variable: "--font-italic-fragment-sans",
   weight: "400",
 });
