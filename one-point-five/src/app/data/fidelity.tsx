@@ -1,6 +1,7 @@
 import React from "react";
 import CaseStudyTemplate from "../templates/case-study-template";
 import { generateCaseStudyDescription } from "../templates/case-study-template";
+import PasswordProtected from "../templates/password-protected";
 
 const fidelity = {
   id: 3,
@@ -15,22 +16,27 @@ const fidelity = {
     acknowledgements:
       "Jenny Nguyen, Shashwat Ghevde, Alec Chum, Nikki Bratten, and the rest of the MFT & CAPE team.",
   }),
+
   content: (
-    <CaseStudyTemplate
-      coverImage={{
-        src: "/Fidelity.jpg",
-        alt: "",
-      }}
-      metadata={{
-        description:
-          "Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.",
-        workType:
-          "Coursework (Interactive Design and the Internet: Software for People & upcoming thesis)",
-        discipline: "Product design, Product research",
-        techStack: "Figma",
-        acknowledgements: "Zack Hauptman, Alvin Ashiatey, Theo Haggins",
-      }}
-      content={`
+    <PasswordProtected
+      password="MMKFidtern24@@" // Replace with your actual password
+      message="Due to a signed NDA, I cannot publicly disclose the contents of this case study. If you think you should have access, [email me](mailto:kris.aziabor@yale.edu). If you have the password, enter here:"
+    >
+      <CaseStudyTemplate
+        coverImage={{
+          src: "/Fidelity.jpg",
+          alt: "",
+        }}
+        metadata={{
+          description:
+            "Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.",
+          workType:
+            "Coursework (Interactive Design and the Internet: Software for People & upcoming thesis)",
+          discipline: "Product design, Product research",
+          techStack: "Figma",
+          acknowledgements: "Zack Hauptman, Alvin Ashiatey, Theo Haggins",
+        }}
+        content={`
   Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.
   
   ### A QUICK NOTE
@@ -83,7 +89,8 @@ const fidelity = {
   It was a wonderful second internship and I will forever be grateful for all who made it possible \<3
 
   `}
-    />
+      />
+    </PasswordProtected>
   ),
 };
 
