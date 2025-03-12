@@ -58,6 +58,8 @@ const fidelity = {
   ## DELIVERABLES
 
   ### JSCAPE FEASIBILITY STUDY
+  
+  Jenny, Shash, and I were responsible for reviewing Redwood's JSCAPE (a MFT platform) and determining if it could perform optimally for Fidelity.
 
   #### RESEARCH
   To find out what we needed from JScape, we started by looking at the functionality of the current system. From ad hoc to SFTP, we spent days testing the full set of features that the current set of products had to offer. We also attended office hours hosted by our mentors, where they would help employees set up accounts and troubleshoot. By simply sitting in the background, we quickly knew what the existing MFT tools did well and where they fell short.
