@@ -24,7 +24,7 @@ const fidelity = {
     >
       <CaseStudyTemplate
         coverImage={{
-          src: "/Fidelity.jpg",
+          src: "/FidelityCover.jpg",
           alt: "",
         }}
         metadata={{
@@ -72,6 +72,9 @@ const fidelity = {
   ### MFT UNIVERSAL CLIENT MVP
   Maybe a week after receiving the case study project, Shash, Jenny, and I looked at each other and knew we wanted to get our hands dirty and create a full-stack project. We put together a slide deck, requested to meet with our bosses, and proposed our idea: an in-house web client bringing together multiple file protocols under a familiar UI. We knew that Fidelity employees were struggling to familiarize themselves with the nuances of each protocol’s application (SFTP, Ad Hoc, HTTPS, etc) and our coworkers in the MFT team were spending hours on call to support them. Bringing as many as the protocols together under one platform was the central goal. We used JScape’s API for all the central functionality and utilized a Python Django stack with Tailwind for seamless styling and backend management. By using the Figma handoff features, I was able to dramatically cut down time for our team between the design and implementation stages.
 
+  ![Fidelity Client mockup](/Fidelity.jpg)
+  ##### A resketch of the mockup created for the Fidelity Client MVP. Centered around a minimalistic and easy-to-use design, the client mimics email for less intuitive protocols like SFTP and AS2.
+  
   Ultimately, we were able to make a full Figma prototype and break ground on the coded MVP. We would have liked to achieve more with the project, but we left our work in good hands for the rest of the team to build from our foundation.
 
   ## REFLECTION

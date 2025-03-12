@@ -70,7 +70,7 @@ const PasswordProtected: React.FC<PasswordProtectedProps> = ({
             </button>
             
             {showError && (
-              <p className="text-red-500 text-sm">
+              <p className="text-red-500 font-[family-name:var(--font-fragment-sans) text-sm">
                 Incorrect password. Please try again or contact for access.
               </p>
             )}
