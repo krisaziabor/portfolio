@@ -21,18 +21,17 @@ const photos = [
         title="Untitled (BLACK BLUE BLACK BOY)"
         images={[
           {
-            src: "/B1.JPG", // Replace with your actual image paths
+            src: "/B1.jpg", // Replace with your actual image paths
           },
           {
-            src: "/B2.JPG",
+            src: "/B2.jpg",
           },
           {
-            src: "/B3.JPG",
+            src: "/B3.jpg",
           },
           {
-            src: "/B4.JPG",
+            src: "/B4.jpg",
           },
-          // Add more images as needed
         ]}
         description=""
       />
@@ -126,25 +125,25 @@ const photos = [
             src: "/p01.jpg", // Replace with your actual image paths
           },
           {
-            src: "/p02.JPG",
+            src: "/p02.jpg",
           },
           {
-            src: "/p03.JPG",
+            src: "/p03.jpg",
           },
           {
-            src: "/p04.JPG",
+            src: "/p04.jpg",
           },
           {
-            src: "/p05.JPG",
+            src: "/p05.jpg",
           },
           {
-            src: "/p06.JPG",
+            src: "/p06.jpg",
           },
           {
-            src: "/p07.JPG",
+            src: "/p07.jpg",
           },
           {
-            src: "/p08.JPG",
+            src: "/p08.jpg",
           },
           // Add more images as needed
         ]}
