@@ -1,10 +1,10 @@
 import linkus from "./linkus";
 import fidelity from "./fidelity";
-import fiftytwox from "./52x";
+// import fiftytwox from "./52x";
 import photos from "./photos";
 import crookes from "./crookes";
 import designatyale from "./day";
-import snippets from "./snippets";
+// import snippets from "./snippets";
 
 
 const projectTypes = [
@@ -27,8 +27,6 @@ const projects = [
   linkus,
   designatyale,
   fidelity,
-  fiftytwox,
-  snippets,
   ...photos,
   crookes,
 ];
