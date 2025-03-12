@@ -19,7 +19,7 @@ const defaultBio = (
     </p>
     <div>
       <a
-      href="/CV.pdf"
+      href="/CV-KAKA.pdf"
       download
       className="font-[family-name:var(--font-fragment-sans)] transition-colors duration-200 hover:text-gray-600"
       >
