@@ -31,14 +31,14 @@ const designatyale = {
         acknowledgements: "",
       }}
       content={`
-  After I heard of Design at Yale for the first time, I knew it was a group I wanted to be a part of. After a rejected application my second year, I told my friend from home that I spend the next two semesters producing design work to change my fate. In September 2024, I applied once more and successfully joined the studio. After a semester of leading projects, I now proudly serve as a co-president. The DAY community is by far the most special family I’ve come across at Yale, and I couldn’t be happier to lead it.
+  After I heard of Design at Yale for the first time, I knew it was a group I wanted to be a part of. After a rejected application my second year, I told a good friend from home that I would spend the next two semesters producing enough design work to change my fate. In September 2024, I applied once more and successfully joined the studio. After a semester of leading projects, I now proudly serve as a co-president. The DAY community is by far the most special family I’ve come across at Yale, and I couldn’t be happier to lead it.
   
   ### A QUICK NOTE
   This case study will be routinely updated as projects become finalized and can be fully shared (many are still under studio review & are for internal viewing only).
 
   ## STUDIO LEADERSHIP
 
-  In my first few months in the leadership role, I have instituted some meaningful changes to make DAY better at its purpose: creating fantastic design & establishing a strong Yale design community.
+  In my first few months in the leadership role, I have instituted some meaningful changes to make DAY better at serving its purpose: creating fantastic design & strengthening Yale;s design community.
 
   ### PRODUCT MANAGEMENT WORKFLOW
 
@@ -55,14 +55,14 @@ const designatyale = {
 
   While I embraced the simplicity and familiarity of iMessage for studio communication, I pushed for the addition of professional product management software.
   [Linear](https://linear.app) is a product I have admired for years, and I was so excited to introduce it to everyone in the studio.
-  By establishing a system that everyone documents their work in, my co-pres [Aditya](https://adityadas.design) and I can easily track progress and cut at least ten minutes of status update chats from the weekly studio meetings.
+  By establishing a system where project leads can delegate tasks and all members can document developements in one space, my co-pres [Aditya](https://adityadas.design) and I have easily tracked progress and cut at least ten minutes of status update chats from the weekly studio meetings.
 
   #### FUTURE PLANS OF CLIENT DASHBOARD
-  By leveraging Linear’s API via GraphQL, I am currently developing a dashboard where our clients can easily access deliverables but most importantly, have up-to-date information on the status of their projects. There will be a degree of obscurity when it comes to the information shown (all good working relationships require a degree of trust and privacy), but the website will bolster our professionalism and hopefully make our clients’ lives easier.
+  By leveraging Linear’s API via GraphQL, I am currently developing a dashboard where our clients can easily access deliverables but most importantly, have up-to-date information on the status of their projects. There will be a degree of obscurity when it comes to the information shown (all good working relationships require a degree of trust and privacy), but the website will bolster our professionalism, reduce the need for check-ins, and hopefully, make our clients’ lives easier.
 
   ### INCREASING ACCESSIBILITY TO DAY-LEVEL DESIGN
   When I first got rejected from DAY, I knew I needed to create more design work. The issue was I did not know where to start. A central initiative I have for the [current website](https://www.designatyale.com/) is to create a repository of resources and small quotes of advice from our designers.
-  Everyone specializes in their own things, so to have a centralized place where you can find guidance across disciplines will lessen the gaps of access and foster a more together design community.
+  Everyone specializes in their own things, so to have a centralized place where you can find guidance across disciplines will lessen the gaps of access and foster a more inclusive design community.
 
   ### PROTECTING THE DAY BRAND & OUR DESIGNERS
   As co-president, I have met with long-standing clients and worked with them to improve practices of communication and product handoff. This will ensure they have designs they love every time and that our designers and their labor are respected.
@@ -76,7 +76,7 @@ const designatyale = {
 
   How does one take a book & its contents and transfer it onto the web?
   Do you create the site as merely a host of static images where a user can tap through each page of the book?
-  Do you abandon all ties to the book & its aesthetics, creating something completely separate?
+  Or do you abandon all ties to the book & its aesthetics, creating something completely separate? How do you playfully sit in between these two extremes?
 
   #### PUBLIC FRONT-FACING SITE
 
@@ -96,23 +96,24 @@ const designatyale = {
   One of the main things I always consider when building on the web is friction. It is not something to shy away from – functionality with friction can keep users purposefully engaged and interested. At the same time, some forms of friction can detract from the user experience.
 
   Wanting to avoid users from leaving the site to pre-order a physical copy of the book, I used AWS Lambda & PostreSQL to allow users to purchase directly from the site. 
-  In addition (and most importantly), I used the same stack alongside Clerk & Shadcn UI elements to create a private admin dashboard for the studio to seamlessly fulfill orders on a unified platform.
+  In addition (and most importantly), I used the same stack alongside Clerk & Shadcn UI to create a private admin dashboard for the studio to seamlessly fulfill orders on a unified platform.
 
   Without this workflow, users would have to fill out a Google Form, where studio members would manually verify payments, contact users, and then fulfill orders. Not only time-consuming, this process has a high potential for inconsistencies and user error.
 
   ![DAY Book Admin 24](3-DAYBOOKADMIN.jpg)
   \n
-  ![DAY Book Admin 24](1-DAYBOOKADMIN.jpg)
-  ##### The stages an order goes through in the admin dashboard. To make sure all actions are considered and to reduce the potential for error, each order must go through every stage (excluding customer action required).
+  ![DAY Book Admin 24](ADMIN-DAY.jpg)
+  ##### A user will request a copy of the book on the front-facing site which sends a POST request to the PostgreSQL database. When a studio member logs in on the private dashboard, the user's data will immediately be there and any member of the studio can act on it using automated tasks (such as flagging a payment method or informing the customer of a fulfillment update)
 
-  This will radically improve the user experience on the front-facing website as well as making the studio's life easier. Easy win-win.
+  This will radically improve the user experience on the front-facing website as well as making the studio's life easier. A win-win if I've ever seen one.
 
   ### YALE COMPUTER SOCIETY – CREATIVE DIRECTOR
 
   ![YCS Logo Marks](YCS.jpg)
 
-  I served as the creative director for Yale Computer Society's rebrand. After a massive few years that has given the club the title of Yale's biggest CS student org, I shifted the brand into a bold while also minimalistic direction.
-  I am developing the new website for the club this semester.
+  I served as the creative director for Yale Computer Society's rebrand. After a massive few years that has given the club the title of Yale's biggest CS student org, I shifted the brand into a bold yet minimalistic direction.
+  
+  I am currently leading design on their new website this semester.
 
   ### YALECLUBS – DESIGN CONSULTANT & UI/UX DESIGNER
   
@@ -122,6 +123,9 @@ const designatyale = {
   ##### Mockups of organization and event modals produced during consultation with YaleClubs. 
   \n
   \n
+  
+  I am so excited for this club's future and cannot wait to share more of the exciting work we are cooking!
+  
   ## MORE ON THE WAY <3
   ![DAY event](DAYEVENT.jpg)
 
