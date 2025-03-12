@@ -12,7 +12,7 @@ const fidelity = {
       "June-August 2024. Ushering in a new era of secure file transferring at Fidelity Investments.",
     workType: "Internship (Fidelity Investments)",
     discipline: "Full-stack software engineering",
-    techStack: "AWS, Linux, Windows, Python Django Terraform",
+    techStack: "AWS, Linux, Windows, Python Django, Terraform, Jenkins",
     acknowledgements:
       "Jenny Nguyen, Shashwat Ghevde, Alec Chum, Nikki Bratten, and the rest of the MFT & CAPE team.",
   }),
