@@ -18,33 +18,16 @@ const defaultBio = (
       (Computer Science & Fine Arts).
     </p>
     <div>
-      <p className="font-[family-name:var(--font-fragment-sans)]">
-        Download my CV{" "}
-        <span className="font-[family-name:var(--font-semi-diatype)]">
-          -&gt;
-        </span>
-      </p>
-      <p
-        className="font-[family-name:var(--font-fragment-sans)] cursor-pointer"
-        onClick={() => {
-          navigator.clipboard.writeText("kris.aziabor@yale.edu");
-          const originalText = "Say hi ->";
-          const element = document.querySelector(".say-hi-text");
-          if (element) {
-            element.textContent = "Email copied to clipboard!";
-            setTimeout(() => {
-              element.textContent = originalText;
-            }, 2000);
-          }
-        }}
+      <a
+      href="/CV.pdf"
+      download
+      className="font-[family-name:var(--font-fragment-sans)] transition-colors duration-200 hover:text-gray-600"
       >
-        <span className="say-hi-text">
-          Say hi{" "}
-          <span className="font-[family-name:var(--font-semi-diatype)]">
-            -&gt;
-          </span>
-        </span>
-      </p>
+      Download CV{" "}
+      <span className="font-[family-name:var(--font-semi-diatype)]">
+        -&gt;
+      </span>
+      </a>
     </div>
   </>
 );

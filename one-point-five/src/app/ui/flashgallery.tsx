@@ -12,7 +12,7 @@ const images = Array.from({ length: 41 }, (_, i) => `/flash-gallery/Gallery${i =
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 200); // Fast transition - 300ms
+    }, 500); // Fast transition - 300ms
 
     return () => clearInterval(interval);
   }, [images.length]);

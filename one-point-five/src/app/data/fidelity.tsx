@@ -1,6 +1,7 @@
 import React from "react";
 import CaseStudyTemplate from "../templates/case-study-template";
 import { generateCaseStudyDescription } from "../templates/case-study-template";
+import PasswordProtected from "../templates/password-protected";
 
 const fidelity = {
   id: 3,
@@ -15,22 +16,27 @@ const fidelity = {
     acknowledgements:
       "Jenny Nguyen, Shashwat Ghevde, Alec Chum, Nikki Bratten, and the rest of the MFT & CAPE team.",
   }),
+
   content: (
-    <CaseStudyTemplate
-      coverImage={{
-        src: "/Fidelity.jpg",
-        alt: "",
-      }}
-      metadata={{
-        description:
-          "Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.",
-        workType:
-          "Coursework (Interactive Design and the Internet: Software for People & upcoming thesis)",
-        discipline: "Product design, Product research",
-        techStack: "Figma",
-        acknowledgements: "Zack Hauptman, Alvin Ashiatey, Theo Haggins",
-      }}
-      content={`
+    <PasswordProtected
+      password="MMKFidtern24@@" // Replace with your actual password
+      message="Due to a signed NDA, I cannot publicly disclose the contents of this case study. If you think you should have access, [email me](mailto:kris.aziabor@yale.edu). If you have the password, enter here:"
+    >
+      <CaseStudyTemplate
+        coverImage={{
+          src: "/FidelityCover.jpg",
+          alt: "",
+        }}
+        metadata={{
+          description:
+            "Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.",
+          workType:
+            "Coursework (Interactive Design and the Internet: Software for People & upcoming thesis)",
+          discipline: "Product design, Product research",
+          techStack: "Figma",
+          acknowledgements: "Zack Hauptman, Alvin Ashiatey, Theo Haggins",
+        }}
+        content={`
   Software moves slowly at Fidelity. At a company where a reputation of dependency means everything, trusted and established products will always reign supreme over flashy but potentially volatile newcomers. However, the deprecation of once powerful tools brought the company to a point where change in the Managed File Transfer (MFT) space had to be embraced. Coming in with fresh eyes and zero background in MFT software, it was my job to help push Fidelity’s file transferring practices into a new exciting era.
   
   ### A QUICK NOTE
@@ -66,6 +72,9 @@ const fidelity = {
   ### MFT UNIVERSAL CLIENT MVP
   Maybe a week after receiving the case study project, Shash, Jenny, and I looked at each other and knew we wanted to get our hands dirty and create a full-stack project. We put together a slide deck, requested to meet with our bosses, and proposed our idea: an in-house web client bringing together multiple file protocols under a familiar UI. We knew that Fidelity employees were struggling to familiarize themselves with the nuances of each protocol’s application (SFTP, Ad Hoc, HTTPS, etc) and our coworkers in the MFT team were spending hours on call to support them. Bringing as many as the protocols together under one platform was the central goal. We used JScape’s API for all the central functionality and utilized a Python Django stack with Tailwind for seamless styling and backend management. By using the Figma handoff features, I was able to dramatically cut down time for our team between the design and implementation stages.
 
+  ![Fidelity Client mockup](/Fidelity.jpg)
+  ##### A resketch of the mockup created for the Fidelity Client MVP. Centered around a minimalistic and easy-to-use design, the client mimics email for less intuitive protocols like SFTP and AS2.
+  
   Ultimately, we were able to make a full Figma prototype and break ground on the coded MVP. We would have liked to achieve more with the project, but we left our work in good hands for the rest of the team to build from our foundation.
 
   ## REFLECTION
@@ -83,7 +92,8 @@ const fidelity = {
   It was a wonderful second internship and I will forever be grateful for all who made it possible \<3
 
   `}
-    />
+      />
+    </PasswordProtected>
   ),
 };
 
