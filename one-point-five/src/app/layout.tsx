@@ -37,6 +37,7 @@ const italicfragmentsans = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://krisaziabor.com'),
   title: "Kris Aziabor",
   description:
     "Creating striking, accessible designs with unconventional & powerful software.",
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     title: "Kris Aziabor",
     description:
       "Creating striking, accessible designs with unconventional & powerful software.",
-    images: ["/preview.jpg",],
+    images: ["/preview.jpg"],
   },
 };
 
