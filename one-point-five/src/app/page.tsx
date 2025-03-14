@@ -1,35 +1,52 @@
 "use client";
 
 import { JSX, useState, useEffect, useRef } from "react";
-
-// Import your actual project data from a separate file
+import ReactMarkdown from 'react-markdown';
 import { projects, projectTypes } from "./data/projects";
 import RapidPhotoGallery from "./ui/flashgallery";
 
+const bioMarkdown = `
+Kris Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
+
+In his third year at Yale University, he leads the college's undergrad design studio ([Design at Yale](https://designatyale.com)) and majors in Computing and the Arts (Computer Science & Fine Arts).
+
+He has interned at [Fidelity Investments](https://www.fidelity.com/) and [cyclio](https://cyclio.webflow.io/) as a full-stack software engineer.
+`;
+
 const defaultBio = (
-  <>
-    <p className="mb-4">
-      Kris Atteh Kojo Aziabor is a product obsessive who uses design, software,
-      & fine arts to uplift collective memories and knowledge above all else.
-    </p>
-    <p className="mb-4">
-      In his third year at Yale University, he leads the college&apos;s only
-      design studio (Design at Yale) and majors in Computing and the Arts
-      (Computer Science & Fine Arts).
-    </p>
+  <div className="bio-content">
+    <ReactMarkdown
+      components={{
+        // Style paragraphs with appropriate spacing and font
+        p: ({...props}) => (
+          <p className="mb-4 font-[family-name:var(--font-fragment-sans)]" {...props} />
+        ),
+        a: ({...props}) => (
+          <a 
+            className="underline hover:text-gray-600" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            {...props}
+          />
+        ),
+      }}
+    >
+      {bioMarkdown}
+    </ReactMarkdown>
+    
+    {/* Add the CV download link separately to maintain exact styling */}
     <div>
+      More info in his {""}
       <a
-      href="/KrisAziaborResume.pdf"
-      download
-      className="font-[family-name:var(--font-fragment-sans)] hover:text-gray-600"
+        href="/KAKAResume.pdf"
+        download
+        className="font-[family-name:var(--font-fragment-sans)] underline hover:text-gray-600"
       >
-      Download CV{" "}
-      <span className="font-[family-name:var(--font-semi-diatype)]">
-        -&gt;
-      </span>
+         CV
       </a>
+      .
     </div>
-  </>
+  </div>
 );
 
 export default function Home() {

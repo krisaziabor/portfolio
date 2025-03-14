@@ -124,6 +124,16 @@ const linkus = {
   As I work on this thesis in the next year, I am incredibly excited to dive deep into what this project needs. From the necessary web scraping to the artistic expression (as a CPAR major, my thesis must also stand as an individual piece in a gallery), LinkUs demands a lot of consideration and precision. But I couldn’t be more excited to pick this back up and revolutionize it.
 
   ![Linkus Image](15-Linkus.jpg)
+  
+  ## QUESTIONS/NOTES FOR MYSELF
+  
+  How can users/artists participate in this formation of connections between media? How democratic or paternalistic will the system be?
+  
+  Where do pieces of heavy (and perhaps too biased) criticism or praise exist within this web/map?
+ 
+  Users will gravitate to the first connection or piece of media they encounter on the site. How do I determine what is pushed to the forefront and what is not?
+  
+  From [Alvin](https://https://alvinashiatey.com/): Look at physical or non-web institutions that serve the same functions/ethos as this project. Maybe your design language will adopt elements from there...
 
   `}
     />

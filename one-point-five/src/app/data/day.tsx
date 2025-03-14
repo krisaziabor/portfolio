@@ -132,6 +132,14 @@ const designatyale = {
   *As projects are still under studio review or are in progress, full case studies for each project will be released this summer. Talk to you soon :)
   
   Visit the DAY website [here](https://www.designatyale.com/).
+  
+  ## QUESTIONS/NOTES FOR MYSELF
+  
+  How can I best mentor and guide aspiring designers like [Gabby](https://https://gabrielleuy.com/) did when I was initially rejected?
+  
+  Don't take yourself & DAY work too seriously – keep having fun!
+  
+  What is my next solo DAY project?
   `}
     />
   ),

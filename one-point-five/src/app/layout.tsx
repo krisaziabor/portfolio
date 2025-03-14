@@ -38,14 +38,14 @@ const italicfragmentsans = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://krisaziabor.com'),
-  title: "Kris Aziabor",
+  title: "Kris Atteh Kojo Aziabor",
   description:
     "Creating striking, accessible designs with unconventional & powerful software.",
   icons: "icon.ico",
 
   // This is where you can add your Open Graph details:
   openGraph: {
-    title: "Kris Aziabor",
+    title: "Kris Atteh Kojo Aziabor",
     description:
       "Creating striking, accessible designs with unconventional & powerful software.",
     url: "https://krisaziabor.com",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   // And here are Twitter-specific tags (many platforms also read them):
   twitter: {
     card: "summary_large_image",
-    title: "Kris Aziabor",
+    title: "Kris Atteh Kojo Aziabor",
     description:
       "Creating striking, accessible designs with unconventional & powerful software.",
     images: ["/preview.jpg"],
