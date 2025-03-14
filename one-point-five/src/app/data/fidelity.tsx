@@ -93,7 +93,7 @@ const fidelity = {
 
   It was a wonderful second internship and I will forever be grateful for all who made it possible \<3
   
-  ## QUESTIONS FOR MYSELF
+  ## QUESTIONS/NOTES FOR MYSELF
   
   From Bryant: How do you want to brand yourself? What do you want people to instantly think of when your name or your work comes up?
 
