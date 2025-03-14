@@ -19,7 +19,7 @@ const fidelity = {
 
   content: (
     <PasswordProtected
-      password="MMKFidtern24@@" // Replace with your actual password
+      password="SakaGauff4!" // Replace with your actual password
       message="Due to a signed NDA, I cannot publicly disclose the contents of this case study. If you think you should have access, [email me](mailto:kris.aziabor@yale.edu). If you have the password, enter here:"
     >
       <CaseStudyTemplate
@@ -92,6 +92,10 @@ const fidelity = {
   In just ten weeks, I dove deep into the world of MFT, presented my work to various groups of senior leadership, did work befitting of a several product roles, and even sprinkled in some intense pickleball playing (me and Melissa still have our undefeated record btw {Shash and Jackson that one "win" doesn't count}).
 
   It was a wonderful second internship and I will forever be grateful for all who made it possible \<3
+  
+  ## QUESTIONS FOR MYSELF
+  
+  From Bryant: How do you want to brand yourself? What do you want people to instantly think of when your name or your work comes up?
 
   `}
       />

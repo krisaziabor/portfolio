@@ -13,15 +13,18 @@ const defaultBio = (
       & fine arts to uplift collective memories and knowledge above all else.
     </p>
     <p className="mb-4">
-      In his third year at Yale University, he leads the college&apos;s only
+      In his third year at Yale University, he leads the college&apos;s undergrad
       design studio (Design at Yale) and majors in Computing and the Arts
-      (Computer Science & Fine Arts).
+      (Computer Science & Fine Arts). 
+    </p>
+    <p className="mb-4">
+      He has interned at Fidelity Investments and cyclio as a full-stack software engineer.
     </p>
     <div>
       <a
-      href="/KrisAziaborResume.pdf"
+      href="/KAKAResume.pdf"
       download
-      className="font-[family-name:var(--font-fragment-sans)] hover:text-gray-600"
+      className="hover:text-gray-600"
       >
       Download CV{" "}
       <span className="font-[family-name:var(--font-semi-diatype)]">
