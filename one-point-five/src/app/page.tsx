@@ -36,16 +36,15 @@ const defaultBio = (
     
     {/* Add the CV download link separately to maintain exact styling */}
     <div>
+      More info in his {""}
       <a
         href="/KAKAResume.pdf"
         download
-        className="font-[family-name:var(--font-fragment-sans)] hover:text-gray-600"
+        className="font-[family-name:var(--font-fragment-sans)] underline hover:text-gray-600"
       >
-        Download CV{" "}
-        <span className="font-[family-name:var(--font-semi-diatype)]">
-          -&gt;
-        </span>
+         CV
       </a>
+      .
     </div>
   </div>
 );
