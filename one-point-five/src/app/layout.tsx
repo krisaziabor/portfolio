@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 // import { dev } from '$app/environment';
 // import { inject } from '@vercel/analytics';
  
@@ -82,6 +83,7 @@ export default function RootLayout({
         className={`${semidiatype.variable} ${boldsemidiatype.variable} ${boldfragment.variable} ${fragmentsans.variable} ${italicfragmentsans.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
