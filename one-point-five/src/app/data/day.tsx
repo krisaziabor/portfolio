@@ -135,7 +135,7 @@ const designatyale = {
   
   ## QUESTIONS/NOTES FOR MYSELF
   
-  How can I best mentor and guide aspiring designers like [Gabby](https://https://gabrielleuy.com/) did when I was initially rejected?
+  How can I best mentor and guide aspiring designers like [Gabby](https://gabrielleuy.com/) did when I was initially rejected?
   
   Don't take yourself & DAY work too seriously – keep having fun!
   
