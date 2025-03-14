@@ -32,7 +32,8 @@ const linkus = {
         acknowledgements: "Zack Hauptman, Alvin Ashiatey, Theo Haggins",
       }}
       content={`
-  Linkus has value everywhere, because every part of the internet – the popular, controversial & everything in between – deserves a visualized, connected, and ever-growing archive.
+  Delusion has never been more popular. 
+  Our favorite platforms that tailor content to us deepen our individualism, and the loss of the third space has only worsened the blow. And finally, media literacy is at a shocking low. Major players amongst Internet spaces – from Google to TikTok – will prioritize profit above all else, leaving collective memory, experience, and knowledge in the bleak foreground. Designed to bring shared knowledge and memory to the forefront, Linkus is a radically new way to browse the web and the world.
           
   ## BACKGROUND
   ### HYPERLINKS & THE INTERNET
