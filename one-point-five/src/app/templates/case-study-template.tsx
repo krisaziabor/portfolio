@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown';
+import Image from "next/image";
 
 interface CaseStudyTemplateProps {
   title?: string;
@@ -31,11 +32,16 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
        {/* Cover Image */}
        {coverImage && (
         <div className="cover-image mb-8 w-4/5">
-          <img 
-            src={coverImage.src} 
-            alt={coverImage.alt} 
-            className="w-full h-auto"
-          />
+          <div className="relative w-full">
+            <Image
+              src={coverImage.src}
+              alt={coverImage.alt}
+              width={1200}
+              height={800}
+              priority
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
         </div>
       )}
       
