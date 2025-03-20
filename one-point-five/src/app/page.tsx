@@ -1,9 +1,14 @@
 "use client";
 
-import { JSX, useState, useEffect, useRef } from "react";
+import { JSX, useState, useEffect, useRef, Suspense} from "react";
 import ReactMarkdown from 'react-markdown';
 import { projects, projectTypes } from "./data/projects";
-import RapidPhotoGallery from "./ui/flashgallery";
+import dynamic from 'next/dynamic';
+
+// Dynamically import the RapidPhotoGallery component to optimize loading
+const RapidPhotoGallery = dynamic(() => import("./ui/flashgallery"), {
+  ssr: false,
+});
 
 const bioMarkdown = `
 Kris Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
@@ -71,18 +76,32 @@ export default function Home() {
     projects: projects.filter((project) => project.typeID === type.typeID),
   }));
 
-  // Enhanced setSelectedProject function to also reset scroll
+  // Preload project images for faster transitions
+  useEffect(() => {
+    // Preload all project cover images
+    projects.forEach(project => {
+      if (project.content?.props?.coverImage?.src) {
+        const img = new window.Image();
+        img.src = project.content.props.coverImage.src;
+      }
+    });
+  }, []);
+
+  // Enhanced setSelectedProject function with improved performance
   const handleProjectSelect = (project: typeof selectedProject) => {
-    setSelectedProject(project);
-
-    // Reset content scroll positions
-    if (contentContainerRef.current) {
-      contentContainerRef.current.scrollTop = 0;
-    }
-
-    if (mobileContentContainerRef.current) {
-      window.scrollTo(0, 0);
-    }
+    // Use requestAnimationFrame for smoother transitions
+    requestAnimationFrame(() => {
+      setSelectedProject(project);
+      
+      // Reset content scroll positions
+      if (contentContainerRef.current) {
+        contentContainerRef.current.scrollTop = 0;
+      }
+      
+      if (mobileContentContainerRef.current) {
+        window.scrollTo(0, 0);
+      }
+    });
   };
 
   // Handle project type selection in mobile view
@@ -162,13 +181,22 @@ export default function Home() {
                 div::-webkit-scrollbar {
                   display: none;
                 }
+                
+                /* Add transition for smoother project switching */
+                .content-transition {
+                  transition: opacity 0.2s ease-in-out;
+                }
               `}</style>
-              {/* Show selected project content or rapid photo gallery */}
-              {selectedProject ? (
-                selectedProject.content
-              ) : (
-                <RapidPhotoGallery />
-              )}
+              {/* Show selected project content or rapid photo gallery with transition */}
+              <div className="content-transition">
+                {selectedProject ? (
+                  <Suspense fallback={<div className="w-full h-32 flex items-center justify-center">Loading project...</div>}>
+                    {selectedProject.content}
+                  </Suspense>
+                ) : (
+                  <RapidPhotoGallery />
+                )}
+              </div>
             </div>
 
             {/* Right Column - Description Text and Project Titles (sticky) */}
@@ -227,12 +255,16 @@ export default function Home() {
           <div className="block md:hidden">
             {/* Content area */}
             <div ref={mobileContentContainerRef} className="pt-4 px-4 pb-24">
-              {/* Show selected project content or rapid photo gallery */}
-              {selectedProject ? (
-                selectedProject.content
-              ) : (
-                <RapidPhotoGallery />
-              )}
+              {/* Show selected project content or rapid photo gallery with transition */}
+              <div className="content-transition">
+                {selectedProject ? (
+                  <Suspense fallback={<div className="w-full h-32 flex items-center justify-center">Loading project...</div>}>
+                    {selectedProject.content}
+                  </Suspense>
+                ) : (
+                  <RapidPhotoGallery />
+                )}
+              </div>
 
               {/* Description Text (always visible on mobile too) */}
               <div className="text-sm mt-8 font-[family-name:var(--font-fragment-sans)] pb-24">

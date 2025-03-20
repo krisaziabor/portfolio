@@ -29,7 +29,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
         <h2 className="text-xl mb-6">{title}</h2>
       )}
 
-       {/* Cover Image */}
+       {/* Cover Image with better loading optimization */}
        {coverImage && (
         <div className="cover-image mb-8 w-4/5">
           <div className="relative w-full">
@@ -39,6 +39,9 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
               width={1200}
               height={800}
               priority
+              quality={85}
+              loading="eager"
+              fetchPriority="high"
               style={{ width: '100%', height: 'auto' }}
             />
           </div>
