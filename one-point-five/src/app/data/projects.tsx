@@ -1,6 +1,6 @@
 import linkus from "./linkus";
 import fidelity from "./fidelity";
-// import fiftytwox from "./52x";
+import fiftytwox from "./52x";
 import photos from "./photos";
 import crookes from "./crookes";
 import designatyale from "./day";
@@ -24,6 +24,7 @@ const projectTypes = [
 
 // Sample project data - replace with your actual projects
 const projects = [
+  fiftytwox,
   linkus,
   designatyale,
   fidelity,

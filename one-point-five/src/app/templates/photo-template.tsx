@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface PhotoSeriesTemplateProps {
   title: string;
@@ -36,11 +37,17 @@ const PhotoSeriesTemplate: React.FC<PhotoSeriesTemplateProps> = ({
     <div className="photo-series">
       {/* Photo Container - Only shows current photo */}
       <div className="photo-container mb-8 cursor-pointer" onClick={nextImage}>
-        <img
-          src={currentImage.src}
-          alt={`${title} - Image ${currentIndex + 1}`}
-          className="w-4/5 h-auto ml-0"
-        />
+        <div className="relative w-4/5 aspect-auto">
+          <Image
+            src={currentImage.src}
+            alt={`${title} - Image ${currentIndex + 1}`}
+            width={1200}
+            height={800}
+            className="ml-0"
+            priority
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
 
         {/* Minimal Pagination Indicator */}
         <div className="mt-2 text-xs font-[family-name:var(--font-semi-diatype)] text-gray-500">
