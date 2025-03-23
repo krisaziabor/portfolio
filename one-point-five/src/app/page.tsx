@@ -59,7 +59,8 @@ export default function Home() {
     id: number;
     title: string;
     content: JSX.Element;
-    description: string | JSX.Element;
+    description?: string | JSX.Element;
+    externalUrl?: string;
   } | null>(null);
 
   // New state for mobile navigation
@@ -226,7 +227,7 @@ export default function Home() {
                               ? "text-toggled"
                               : ""
                           }`}
-                          onClick={() => handleProjectSelect(project)}
+                          onClick={() => 'externalUrl' in project ? window.open(project.externalUrl, '_blank') : handleProjectSelect(project)}
                         >
                           {project.title}
                         </div>
@@ -335,7 +336,7 @@ export default function Home() {
                               ? "text-toggled"
                               : "text-black"
                           }`}
-                          onClick={() => handleProjectSelect(project)}
+                          onClick={() => 'externalUrl' in project ? window.open(project.externalUrl, '_blank') : handleProjectSelect(project)}
                         >
                           {project.title}
                         </button>
