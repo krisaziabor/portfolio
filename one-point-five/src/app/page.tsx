@@ -2,12 +2,6 @@
 
 import { useRef } from "react";
 import ReactMarkdown from "react-markdown";
-import dynamic from "next/dynamic";
-
-// Dynamically import the RapidPhotoGallery component to optimize loading
-const RapidPhotoGallery = dynamic(() => import("./ui/flashgallery"), {
-  ssr: false,
-});
 
 const bioMarkdown = `
 Kris Atteh Kojo Aziabor is a product obsessive who uses design, software, & fine arts to uplift collective memories and knowledge above all else.
@@ -45,7 +39,6 @@ const defaultBio = (
 
 export default function Home() {
   // Create refs for the navigation container and content container
-  const navContainerRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const mobileContentContainerRef = useRef<HTMLDivElement>(null);
 
@@ -60,7 +53,7 @@ export default function Home() {
               {/* Left Column containing just description and links, vertically centered */}
               <div className="w-1/3 flex flex-col">
                 {/* Description and links container - vertically centered */}
-                <div className="p-8 h-full flex flex-col justify-center">
+                <div className="pl-4 h-full flex flex-col justify-center">
                   {/* Description Text (Bio or Project Description) - centered vertically */}
                   <div className="text-sm font-[family-name:var(--font-fragment-sans)] mb-6 text-left">
                     {defaultBio}
@@ -86,12 +79,11 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right Column - Flash Gallery (vertically centered) */}
+              {/* Right Column - Empty space (formerly flash gallery) */}
               <div
                 ref={contentContainerRef}
                 className="w-2/3 pl-4 pr-8 flex items-center justify-center h-full"
                 style={{
-                  /* Hide scrollbar for Chrome, Safari and Opera */
                   overflow: "auto",
                   scrollbarWidth: "none",
                   msOverflowStyle: "none",
@@ -117,10 +109,8 @@ export default function Home() {
                     transition: opacity 0.2s ease-in-out;
                   }
                 `}</style>
-                {/* Show selected project content or rapid photo gallery with transition */}
-                <div className="content-transition w-full">
-                  <RapidPhotoGallery />
-                </div>
+                {/* Empty right column */}
+                <div className="content-transition w-full"></div>
               </div>
             </div>
 
@@ -129,45 +119,27 @@ export default function Home() {
 
           {/* Mobile layout */}
           <div className="block md:hidden">
-            {/* Content area */}
-            <div ref={mobileContentContainerRef} className="pt-4 px-4 pb-24">
-              {/* Show selected project content or rapid photo gallery with transition */}
-              <div className="content-transition">
-                <RapidPhotoGallery />
-              </div>
-
-              {/* Description Text (always visible on mobile too) */}
-              <div className="text-sm mt-8 font-[family-name:var(--font-fragment-sans)] pb-24">
+            {/* Content area - centered */}
+            <div ref={mobileContentContainerRef} className="pt-4 px-4 flex flex-col items-center justify-center min-h-screen">
+              {/* Description Text - centered */}
+              <div className="text-sm font-[family-name:var(--font-fragment-sans)] mb-6 text-center max-w-md">
                 {defaultBio}
               </div>
-            </div>
-
-            {/* Fixed footer with navigation */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white z-10 border-t border-gray-100">
-              <div
-                ref={navContainerRef}
-                className="overflow-x-auto whitespace-nowrap py-4 px-4 flex justify-center"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                <style jsx>{`
-                  div::-webkit-scrollbar {
-                    display: none;
-                  }
-                `}</style>
-
-                {/* Three external links replacing project menu */}
+              
+              {/* Links directly below the text */}
+              <div className="flex flex-wrap justify-center text-sm mt-4">
                 <a
                   href="https://product.krisaziabor.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mr-6 font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider text-xs hover:text-gray-600"
+                  className="mr-6 font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider text-xs hover:text-gray-600"
                 >
                   Product
                 </a>
-                <span className="inline-block mr-6 font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider text-xs text-gray-400 cursor-not-allowed">
+                <span className="mr-6 font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider text-xs text-gray-400 cursor-not-allowed">
                   Fine Arts
                 </span>
-                <span className="inline-block font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider text-xs text-gray-400 cursor-not-allowed">
+                <span className="font-[family-name:var(--font-bold-semi-diatype)] uppercase tracking-wider text-xs text-gray-400 cursor-not-allowed">
                   Writing
                 </span>
               </div>
