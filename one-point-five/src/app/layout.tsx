@@ -7,6 +7,12 @@ import { Analytics } from "@vercel/analytics/next";
  
 // inject({ mode: dev ? 'development' : 'production' });
 
+const albragrotesk = localFont({
+  src: "../../../fonts/Albragrotesk-Regular.otf",
+  variable: "--font-albragrotesk",
+  weight: "400",
+});
+
 const semidiatype = localFont({
   src: "../../../fonts/ABCDiatypeSemi-MonoEdu-Regular.otf",
   variable: "--font-semi-diatype",
@@ -80,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${semidiatype.variable} ${boldsemidiatype.variable} ${boldfragment.variable} ${fragmentsans.variable} ${italicfragmentsans.variable} antialiased`}
+        className={`${albragrotesk.variable} ${semidiatype.variable} ${boldsemidiatype.variable} ${boldfragment.variable} ${fragmentsans.variable} ${italicfragmentsans.variable} antialiased`}
       >
         {children}
         <Analytics />
