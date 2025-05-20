@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 // inject({ mode: dev ? 'development' : 'production' });
 
 const albragrotesk = localFont({
-  src: "../../../fonts/Albragrotesk-Regular.otf",
+  src: "../../../fonts/AlbraGrotesk-Regular.otf",
   variable: "--font-albragrotesk",
   weight: "400",
 });
