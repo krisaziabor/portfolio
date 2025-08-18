@@ -38,7 +38,7 @@ const defaultBio = (
       .
     </p>
     <p className="font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
-      New product portfolio coming soon – view archive <a href="https:/archived.krisaziabor.com" target="_blank" rel="noopener noreferrer" className="opacity-100 hover:opacity-30 transition-opacity">here</a>.
+      New product portfolio coming soon – view archive <a href="https://archived.krisaziabor.com" target="_blank" rel="noopener noreferrer" className="opacity-100 hover:opacity-30 transition-opacity">here</a>.
     </p>
   </div>
 );
