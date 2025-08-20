@@ -10,7 +10,7 @@ const defaultBio = (
         href="https://designatyale.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-100 hover:opacity-30 transition-opacity"
+        className="opacity-60 hover:opacity-100 transition-opacity"
       >
         undergrad design studio
       </a>{" "}
@@ -22,7 +22,7 @@ const defaultBio = (
         href="https://www.fidelity.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-100 hover:opacity-30 transition-opacity"
+        className="opacity-60 hover:opacity-100 transition-opacity"
       >
         Fidelity Investments
       </a>{" "}
@@ -31,14 +31,14 @@ const defaultBio = (
         href="https://cyclio.webflow.io/"
         target="_blank"
         rel="noopener noreferrer"
-        className="opacity-100 hover:opacity-30 transition-opacity"
+        className="opacity-60 hover:opacity-100 transition-opacity"
       >
         cyclio
       </a>
       .
     </p>
     <p className="font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
-      New product portfolio coming soon – view archive <a href="https://archived.krisaziabor.com" target="_blank" rel="noopener noreferrer" className="opacity-100 hover:opacity-30 transition-opacity">here</a>.
+      New product portfolio coming soon – view archive <a href="https://archived.krisaziabor.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">here</a>.
     </p>
   </div>
 );
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="mt-6 md:hidden">
             <a
               href="mailto:hello@krisaziabor.com"
-              className="text-sm font-[family-name:var(--font-albragrotesk)] opacity-100 hover:opacity-30 transition-opacity"
+              className="text-sm font-[family-name:var(--font-albragrotesk)] opacity-60 hover:opacity-100 transition-opacity"
             >
               hello@krisaziabor.com
             </a>
@@ -75,7 +75,7 @@ export default function Home() {
         >
           <a
             href="mailto:hello@krisaziabor.com"
-            className="text-sm font-[family-name:var(--font-albragrotesk)] opacity-100 hover:opacity-30 transition-opacity"
+            className="text-sm font-[family-name:var(--font-albragrotesk)] opacity-60 hover:opacity-100 transition-opacity"
           >
             hello@krisaziabor.com
           </a>
