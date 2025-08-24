@@ -1,11 +1,11 @@
 const defaultBio = (
   <div className="bio-content">
     <p className="mb-6 font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
-      Kris Aziabor is a designer & engineer combining striking and accessible
-      design with powerful software to build memorable experiences.
+      Combining striking and accessible
+      design with powerful software to build experiences worth remembering.
     </p>
     <p className="mb-6 font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
-      Going into his final year at Yale University, he leads the college&apos;s{" "}
+      In my final year at Yale University, I lead the college&apos;s{" "}
       <a
         href="https://designatyale.com"
         target="_blank"
@@ -13,11 +13,26 @@ const defaultBio = (
         className="opacity-60 hover:opacity-100 transition-opacity"
       >
         undergrad design studio
-      </a>{" "}
-      and majors in Computing and the Arts.
+      </a>{"."}
     </p>
     <p className="mb-6 font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
-      Interned in software (full-stack) at{" "}
+      Currently interning in product design at{" "}
+      <a
+        href="https://kensho.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-60 hover:opacity-100 transition-opacity"
+      >Kensho</a>, the AI innovation hub of{" "}
+      <a
+        href="https://spglobal.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="opacity-60 hover:opacity-100 transition-opacity"
+      >
+        S&P Global</a>.
+      </p>
+      <p className="mb-6 font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
+      Previously full-stack software at{" "}
       <a
         href="https://www.fidelity.com/"
         target="_blank"
@@ -26,7 +41,7 @@ const defaultBio = (
       >
         Fidelity Investments
       </a>{" "}
-      for 2 summers and formerly at{" "}
+      and {" "}
       <a
         href="https://cyclio.webflow.io/"
         target="_blank"
@@ -38,7 +53,7 @@ const defaultBio = (
       .
     </p>
     <p className="font-[family-name:var(--font-albragrotesk)] text-sm leading-relaxed">
-      New product portfolio coming soon – view archive <a href="https://archived.krisaziabor.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">here</a>.
+      New product portfolio on the way – <a href="https://archived.krisaziabor.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">view archive</a>.
     </p>
   </div>
 );
